@@ -1,0 +1,74 @@
+=== 실험 시작: mlp_SMOTE_min_average ===
+GPU: 5
+시작 시간: Tue Jul 15 00:35:43 UTC 2025
+
+wandb: Currently logged in as: ahnha (ahnha_ahnha) to https://api.wandb.ai. Use `wandb login --relogin` to force relogin
+wandb: WARNING Using a boolean value for 'reinit' is deprecated. Use 'return_previous' or 'finish_previous' instead.
+wandb: Tracking run with wandb version 0.21.0
+wandb: Run data is saved locally in /home/user14/bagle/classifier/wandb/run-20250715_003550-exiv4hx2
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run adni_ct_mlp_SMOTE_min_fold_1
+wandb: ⭐️ View project at https://wandb.ai/ahnha_ahnha/adni_ct_mlp
+wandb: 🚀 View run at https://wandb.ai/ahnha_ahnha/adni_ct_mlp/runs/exiv4hx2
+Auto-generated run_name: adni_ct_mlp_SMOTE_min
+Loading data from: /home/user14/bagle/data/ADNI_CT/real.pt
+Data loaded successfully:
+  Samples: 1644
+  Features shape: torch.Size([1644, 160, 1])
+  Labels shape: torch.Size([1644])
+  Unique labels: tensor([0, 1, 2, 3, 4])
+  Fold values: tensor([0, 1, 2, 3, 4])
+Number of classes: 5
+Using existing fold information for K-fold cross validation
+Fold 0: 1309 train samples, 335 test samples
+Fold 1: 1316 train samples, 328 test samples
+Fold 2: 1331 train samples, 313 test samples
+Fold 3: 1308 train samples, 336 test samples
+Fold 4: 1312 train samples, 332 test samples
+save directory:  ./logs/20250715_003548
+
+
+=============================== Fold 1 ===============================
+Loaded synthetic data from SMOTE_min_fold0.pt: 616 samples
+SMOTE synthetic data - using class-based adjacency matrices
+Using SMOTE_min augmentation: 616 additional samples
+Adding 616 augmented samples to training set
+Generating adjacency matrices for 616 synthetic samples using average method
+Creating class-wise average adjacency matrices with 90.0% sparsification
+Class 0: processed 385 matrices, original avg degree: 1.00, target edges: 80
+Class 1: processed 153 matrices, original avg degree: 1.00, target edges: 80
+Class 2: processed 384 matrices, original avg degree: 1.00, target edges: 80
+Class 3: processed 249 matrices, original avg degree: 1.00, target edges: 80
+Class 4: processed 138 matrices, original avg degree: 1.00, target edges: 80
+Assigning class average adjacency matrices for 616 synthetic samples (Option-M)
+Average adjacency assignment:
+  Class 1: 232 synthetic samples
+  Class 2: 1 synthetic samples
+  Class 3: 136 synthetic samples
+  Class 4: 247 synthetic samples
+Final training set size: 1925 samples
+Traceback (most recent call last):
+  File "/home/user14/bagle/classifier/main.py", line 647, in <module>
+    main()
+  File "/home/user14/bagle/classifier/main.py", line 535, in main
+    val_acc_list, val_sens_list, val_prec_list = trainer.train()
+  File "/home/user14/bagle/classifier/utils/train.py", line 367, in train
+    output = self.network.forward(feature)
+  File "/home/user14/bagle/classifier/models/mlp.py", line 28, in forward
+    x = self.pred(x)
+  File "/opt/conda/envs/bagle_env/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1501, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/opt/conda/envs/bagle_env/lib/python3.10/site-packages/torch/nn/modules/container.py", line 217, in forward
+    input = module(input)
+  File "/opt/conda/envs/bagle_env/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1501, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/opt/conda/envs/bagle_env/lib/python3.10/site-packages/torch/nn/modules/linear.py", line 114, in forward
+    return F.linear(input, self.weight, self.bias)
+RuntimeError: Expected all tensors to be on the same device, but found at least two devices, cuda:5 and cuda:0! (when checking argument for argument mat1 in method wrapper_CUDA_addmm)
+[1;34mwandb[0m: 
+[1;34mwandb[0m: 🚀 View run [33madni_ct_mlp_SMOTE_min_fold_1[0m at: [34mhttps://wandb.ai/ahnha_ahnha/adni_ct_mlp/runs/exiv4hx2[0m
+[1;34mwandb[0m: Find logs at: [1;35mwandb/run-20250715_003550-exiv4hx2/logs[0m
+
+종료 시간: Tue Jul 15 00:35:57 UTC 2025
+종료 코드: 1
+✗ 실험 실패: mlp_SMOTE_min_average (코드: 1)

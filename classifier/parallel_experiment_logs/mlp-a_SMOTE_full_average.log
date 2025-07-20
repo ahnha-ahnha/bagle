@@ -1,0 +1,594 @@
+=== 실험 시작: mlp-a_SMOTE_full_average ===
+GPU: 5
+시작 시간: Tue Jul 15 02:52:25 UTC 2025
+
+wandb: Currently logged in as: ahnha (ahnha_ahnha) to https://api.wandb.ai. Use `wandb login --relogin` to force relogin
+wandb: WARNING Using a boolean value for 'reinit' is deprecated. Use 'return_previous' or 'finish_previous' instead.
+wandb: Tracking run with wandb version 0.21.0
+wandb: Run data is saved locally in /home/user14/bagle/classifier/wandb/run-20250715_025232-gnfvrb9u
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run adni_ct_mlp-a_SMOTE_full_fold_1
+wandb: ⭐️ View project at https://wandb.ai/ahnha_ahnha/adni_ct_mlp-a
+wandb: 🚀 View run at https://wandb.ai/ahnha_ahnha/adni_ct_mlp-a/runs/gnfvrb9u
+wandb: uploading config.yaml
+wandb:                                                                                
+wandb: 
+wandb: Run history:
+wandb:         test_acc ▁
+wandb:       test_auroc ▁
+wandb:          test_f1 ▁
+wandb: test_macro_auroc ▁
+wandb:    test_macro_f1 ▁
+wandb:        test_prec ▁
+wandb:         test_rec ▁
+wandb: 
+wandb: Run summary:
+wandb:         test_acc 0.2985
+wandb:       test_auroc 0.5599
+wandb:          test_f1 0.2618
+wandb: test_macro_auroc 0.5599
+wandb:    test_macro_f1 0.2618
+wandb:        test_prec 0.2513
+wandb:         test_rec 0.2875
+wandb: 
+wandb: 🚀 View run adni_ct_mlp-a_SMOTE_full_fold_1 at: https://wandb.ai/ahnha_ahnha/adni_ct_mlp-a/runs/gnfvrb9u
+wandb: ⭐️ View project at: https://wandb.ai/ahnha_ahnha/adni_ct_mlp-a
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20250715_025232-gnfvrb9u/logs
+wandb: creating run
+wandb: Tracking run with wandb version 0.21.0
+wandb: Run data is saved locally in /home/user14/bagle/classifier/wandb/run-20250715_025501-necq0r7h
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run adni_ct_mlp-a_SMOTE_full_fold_2
+wandb: ⭐️ View project at https://wandb.ai/ahnha_ahnha/adni_ct_mlp-a
+wandb: 🚀 View run at https://wandb.ai/ahnha_ahnha/adni_ct_mlp-a/runs/necq0r7h
+Auto-generated run_name: adni_ct_mlp-a_SMOTE_full
+Loading data from: /home/user14/bagle/data/ADNI_CT/real.pt
+Data loaded successfully:
+  Samples: 1644
+  Features shape: torch.Size([1644, 160, 1])
+  Labels shape: torch.Size([1644])
+  Unique labels: tensor([0, 1, 2, 3, 4])
+  Fold values: tensor([0, 1, 2, 3, 4])
+Number of classes: 5
+Using existing fold information for K-fold cross validation
+Fold 0: 1309 train samples, 335 test samples
+Fold 1: 1316 train samples, 328 test samples
+Fold 2: 1331 train samples, 313 test samples
+Fold 3: 1308 train samples, 336 test samples
+Fold 4: 1312 train samples, 332 test samples
+save directory:  ./logs/20250715_025230
+
+
+=============================== Fold 1 ===============================
+Loaded synthetic data from SMOTE_full_fold0.pt: 1386 samples
+SMOTE synthetic data - using class-based adjacency matrices
+Using SMOTE_full augmentation: 1386 additional samples
+Adding 1386 augmented samples to training set
+Generating adjacency matrices for 1386 synthetic samples using average method
+Creating class-wise average adjacency matrices with 90.0% sparsification
+Class 0: processed 385 matrices, original avg degree: 1.00, target edges: 80
+Class 1: processed 153 matrices, original avg degree: 1.00, target edges: 80
+Class 2: processed 384 matrices, original avg degree: 1.00, target edges: 80
+Class 3: processed 249 matrices, original avg degree: 1.00, target edges: 80
+Class 4: processed 138 matrices, original avg degree: 1.00, target edges: 80
+Assigning class average adjacency matrices for 1386 synthetic samples (Option-M)
+Average adjacency assignment:
+  Class 0: 154 synthetic samples
+  Class 1: 386 synthetic samples
+  Class 2: 155 synthetic samples
+  Class 3: 290 synthetic samples
+  Class 4: 401 synthetic samples
+Final training set size: 2695 samples
+MLP-A Epoch [100 / 5000] loss_train: 0.71192 accuracy_train: 0.80557
+Saved best MLP-A model with accuracy 0.8056 to ./logs/20250715_025230/0.pth
+MLP-A Epoch [200 / 5000] loss_train: 0.40114 accuracy_train: 0.89054
+MLP-A Epoch [300 / 5000] loss_train: 0.30591 accuracy_train: 0.92245
+Saved best MLP-A model with accuracy 0.9224 to ./logs/20250715_025230/0.pth
+MLP-A Epoch [400 / 5000] loss_train: 0.19797 accuracy_train: 0.93766
+MLP-A Epoch [500 / 5000] loss_train: 0.17262 accuracy_train: 0.94212
+MLP-A Epoch [600 / 5000] loss_train: 0.39633 accuracy_train: 0.83117
+MLP-A Epoch [700 / 5000] loss_train: 0.32137 accuracy_train: 0.91466
+MLP-A Epoch [800 / 5000] loss_train: 0.27823 accuracy_train: 0.93098
+MLP-A Epoch [900 / 5000] loss_train: 0.22224 accuracy_train: 0.94063
+MLP-A Epoch [1000 / 5000] loss_train: 0.16675 accuracy_train: 0.94137
+MLP-A Epoch [1100 / 5000] loss_train: 0.13865 accuracy_train: 0.94212
+MLP-A Epoch [1200 / 5000] loss_train: 0.13497 accuracy_train: 0.94212
+MLP-A Epoch [1300 / 5000] loss_train: 0.13190 accuracy_train: 0.94212
+MLP-A Epoch [1400 / 5000] loss_train: 0.13004 accuracy_train: 0.94212
+MLP-A Epoch [1500 / 5000] loss_train: 0.14986 accuracy_train: 0.94212
+MLP-A Epoch [1600 / 5000] loss_train: 1.46299 accuracy_train: 0.33618
+MLP-A Epoch [1700 / 5000] loss_train: 1.40591 accuracy_train: 0.34026
+MLP-A Epoch [1800 / 5000] loss_train: 1.39685 accuracy_train: 0.34063
+MLP-A Epoch [1900 / 5000] loss_train: 1.30011 accuracy_train: 0.34026
+MLP-A Epoch [2000 / 5000] loss_train: 1.18137 accuracy_train: 0.36994
+MLP-A Epoch [2100 / 5000] loss_train: 1.13867 accuracy_train: 0.35547
+MLP-A Epoch [2200 / 5000] loss_train: 1.12103 accuracy_train: 0.34842
+MLP-A Epoch [2300 / 5000] loss_train: 1.12204 accuracy_train: 0.45492
+MLP-A Epoch [2400 / 5000] loss_train: 1.11491 accuracy_train: 0.40000
+MLP-A Epoch [2500 / 5000] loss_train: 1.12281 accuracy_train: 0.52096
+MLP-A Epoch [2600 / 5000] loss_train: 1.10214 accuracy_train: 0.50093
+MLP-A Epoch [2700 / 5000] loss_train: 1.09846 accuracy_train: 0.51429
+MLP-A Epoch [2800 / 5000] loss_train: 1.11504 accuracy_train: 0.52764
+MLP-A Epoch [2900 / 5000] loss_train: 1.09307 accuracy_train: 0.53024
+MLP-A Epoch [3000 / 5000] loss_train: 0.93695 accuracy_train: 0.54063
+MLP-A Epoch [3100 / 5000] loss_train: 0.84406 accuracy_train: 0.54397
+MLP-A Epoch [3200 / 5000] loss_train: 0.81567 accuracy_train: 0.56141
+MLP-A Epoch [3300 / 5000] loss_train: 0.81083 accuracy_train: 0.57774
+MLP-A Epoch [3400 / 5000] loss_train: 0.79958 accuracy_train: 0.60891
+MLP-A Epoch [3500 / 5000] loss_train: 0.79237 accuracy_train: 0.62152
+MLP-A Epoch [3600 / 5000] loss_train: 0.80137 accuracy_train: 0.58182
+MLP-A Epoch [3700 / 5000] loss_train: 0.78668 accuracy_train: 0.64045
+MLP-A Epoch [3800 / 5000] loss_train: 0.83500 accuracy_train: 0.61299
+MLP-A Epoch [3900 / 5000] loss_train: 0.78364 accuracy_train: 0.66234
+MLP-A Epoch [4000 / 5000] loss_train: 0.78244 accuracy_train: 0.62004
+MLP-A Epoch [4100 / 5000] loss_train: 0.64154 accuracy_train: 0.73766
+MLP-A Epoch [4200 / 5000] loss_train: 0.59545 accuracy_train: 0.73915
+MLP-A Epoch [4300 / 5000] loss_train: 0.58361 accuracy_train: 0.73952
+MLP-A Epoch [4400 / 5000] loss_train: 0.51725 accuracy_train: 0.75176
+MLP-A Epoch [4500 / 5000] loss_train: 0.48763 accuracy_train: 0.88200
+MLP-A Epoch [4600 / 5000] loss_train: 0.37621 accuracy_train: 0.88460
+MLP-A Epoch [4700 / 5000] loss_train: 0.89131 accuracy_train: 0.65529
+MLP-A Epoch [4800 / 5000] loss_train: 0.51492 accuracy_train: 0.85937
+MLP-A Epoch [4900 / 5000] loss_train: 0.47435 accuracy_train: 0.92764
+MLP-A Epoch [5000 / 5000] loss_train: 0.43483 accuracy_train: 0.93692
+MLP-A Training completed! Best accuracy: 0.9436
+MLP-A load_and_test called with model_path: ./logs/20250715_025230/0.pth
+Loading MLP-A model from: ./logs/20250715_025230/0.pth
+GPU memory cleared after fold 1
+
+
+=============================== Fold 2 ===============================
+Loaded synthetic data from SMOTE_full_fold1.pt: 1379 samples
+SMOTE synthetic data - using class-based adjacency matrices
+Using SMOTE_full augmentation: 1379 additional samples
+Adding 1379 augmented samples to training set
+Generating adjacency matrices for 1379 synthetic samples using average method
+Creating class-wise average adjacency matrices with 90.0% sparsification
+Class 0: processed 380 matrices, original avg degree: 1.00, target edges: 80
+Class 1: processed 152 matrices, original avg degree: 1.00, target edges: 80
+Class 2: processed 404 matrices, original avg degree: 1.00, target edges: 80
+Class 3: processed 248 matrices, original avg degree: 1.00, target edges: 80
+Class 4: processed 132 matrices, original avg degree: 1.00, target edges: 80
+Assigning class average adjacency matrices for 1379 synthetic samples (Option-M)
+Average adjacency assignment:
+  Class 0: 159 synthetic samples
+  Class 1: 387 synthetic samples
+  Class 2: 135 synthetic samples
+  Class 3: 291 synthetic samples
+  Class 4: 407 synthetic samples
+Final training set size: 2695 samples
+MLP-A Epoch [100 / 5000] loss_train: 0.39496 accuracy_train: 0.95213
+MLP-A Epoch [200 / 5000] loss_train: 0.13251 accuracy_train: 0.99740
+MLP-A Epoch [300 / 5000] loss_train: 0.11420 accuracy_train: 0.99481
+MLP-A Epoch [400 / 5000] loss_train: 0.07179 accuracy_train: 1.00000
+MLP-A Epoch [500 / 5000] loss_train: 0.06199 accuracy_train: 1.00000
+MLP-A Epoch [600 / 5000] loss_train: 0.05464 accuracy_train: 1.00000
+MLP-A Epoch [700 / 5000] loss_train: 1.04249 accuracy_train: 0.54063
+MLP-A Epoch [800 / 5000] loss_train: 0.51408 accuracy_train: 0.83711
+MLP-A Epoch [900 / 5000] loss_train: 0.23129 accuracy_train: 0.94694
+MLP-A Epoch [1000 / 5000] loss_train: 0.17826 accuracy_train: 0.98479
+MLP-A Epoch [1100 / 5000] loss_train: 0.10510 accuracy_train: 0.99889
+MLP-A Epoch [1200 / 5000] loss_train: 0.08957 accuracy_train: 0.99889
+MLP-A Epoch [1300 / 5000] loss_train: 0.07953 accuracy_train: 0.99926
+MLP-A Epoch [1400 / 5000] loss_train: 0.06512 accuracy_train: 0.99963
+MLP-A Epoch [1500 / 5000] loss_train: 0.06016 accuracy_train: 0.99963
+MLP-A Epoch [1600 / 5000] loss_train: 0.05621 accuracy_train: 0.99963
+MLP-A Epoch [1700 / 5000] loss_train: 0.05292 accuracy_train: 0.99963
+MLP-A Epoch [1800 / 5000] loss_train: 0.05005 accuracy_train: 0.99963
+MLP-A Epoch [1900 / 5000] loss_train: 0.04758 accuracy_train: 0.99963
+MLP-A Epoch [2000 / 5000] loss_train: 0.04531 accuracy_train: 0.99963
+wandb: uploading config.yaml
+wandb:                                                                                
+wandb: 
+wandb: Run history:
+wandb:         test_acc ▁
+wandb:       test_auroc ▁
+wandb:          test_f1 ▁
+wandb: test_macro_auroc ▁
+wandb:    test_macro_f1 ▁
+wandb:        test_prec ▁
+wandb:         test_rec ▁
+wandb: 
+wandb: Run summary:
+wandb:         test_acc 0.3567
+wandb:       test_auroc 0.6497
+wandb:          test_f1 0.2996
+wandb: test_macro_auroc 0.6497
+wandb:    test_macro_f1 0.2996
+wandb:        test_prec 0.3076
+wandb:         test_rec 0.3443
+wandb: 
+wandb: 🚀 View run adni_ct_mlp-a_SMOTE_full_fold_2 at: https://wandb.ai/ahnha_ahnha/adni_ct_mlp-a/runs/necq0r7h
+wandb: ⭐️ View project at: https://wandb.ai/ahnha_ahnha/adni_ct_mlp-a
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20250715_025501-necq0r7h/logs
+wandb: Tracking run with wandb version 0.21.0
+wandb: Run data is saved locally in /home/user14/bagle/classifier/wandb/run-20250715_025730-fl12qwmf
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run adni_ct_mlp-a_SMOTE_full_fold_3
+wandb: ⭐️ View project at https://wandb.ai/ahnha_ahnha/adni_ct_mlp-a
+wandb: 🚀 View run at https://wandb.ai/ahnha_ahnha/adni_ct_mlp-a/runs/fl12qwmf
+wandb: uploading config.yaml
+wandb:                                                                                
+wandb: 
+wandb: Run history:
+wandb:         test_acc ▁
+wandb:       test_auroc ▁
+wandb:          test_f1 ▁
+wandb: test_macro_auroc ▁
+wandb:    test_macro_f1 ▁
+wandb:        test_prec ▁
+wandb:         test_rec ▁
+wandb: 
+wandb: Run summary:
+wandb:         test_acc 0.262
+wandb:       test_auroc 0.6078
+wandb:          test_f1 0.2264
+wandb: test_macro_auroc 0.6078
+wandb:    test_macro_f1 0.2264
+wandb:        test_prec 0.2168
+wandb:         test_rec 0.3309
+wandb: 
+wandb: 🚀 View run adni_ct_mlp-a_SMOTE_full_fold_3 at: https://wandb.ai/ahnha_ahnha/adni_ct_mlp-a/runs/fl12qwmf
+wandb: ⭐️ View project at: https://wandb.ai/ahnha_ahnha/adni_ct_mlp-a
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20250715_025730-fl12qwmf/logs
+MLP-A Epoch [2100 / 5000] loss_train: 0.95938 accuracy_train: 0.67644
+MLP-A Epoch [2200 / 5000] loss_train: 0.64419 accuracy_train: 0.82115
+MLP-A Epoch [2300 / 5000] loss_train: 0.55531 accuracy_train: 0.83970
+MLP-A Epoch [2400 / 5000] loss_train: 0.51762 accuracy_train: 0.84527
+MLP-A Epoch [2500 / 5000] loss_train: 0.49268 accuracy_train: 0.84119
+MLP-A Epoch [2600 / 5000] loss_train: 0.47219 accuracy_train: 0.84972
+MLP-A Epoch [2700 / 5000] loss_train: 0.46034 accuracy_train: 0.85232
+MLP-A Epoch [2800 / 5000] loss_train: 0.45135 accuracy_train: 0.85566
+MLP-A Epoch [2900 / 5000] loss_train: 0.43453 accuracy_train: 0.86642
+MLP-A Epoch [3000 / 5000] loss_train: 0.38750 accuracy_train: 0.92319
+MLP-A Epoch [3100 / 5000] loss_train: 0.33935 accuracy_train: 0.93024
+MLP-A Epoch [3200 / 5000] loss_train: 0.26105 accuracy_train: 0.94917
+MLP-A Epoch [3300 / 5000] loss_train: 0.23080 accuracy_train: 0.95028
+MLP-A Epoch [3400 / 5000] loss_train: 1.01758 accuracy_train: 0.64824
+MLP-A Epoch [3500 / 5000] loss_train: 0.93219 accuracy_train: 0.65677
+MLP-A Epoch [3600 / 5000] loss_train: 0.85509 accuracy_train: 0.66939
+MLP-A Epoch [3700 / 5000] loss_train: 0.79650 accuracy_train: 0.68571
+MLP-A Epoch [3800 / 5000] loss_train: 0.74284 accuracy_train: 0.71169
+MLP-A Epoch [3900 / 5000] loss_train: 0.67138 accuracy_train: 0.75325
+MLP-A Epoch [4000 / 5000] loss_train: 0.47670 accuracy_train: 0.87941
+MLP-A Epoch [4100 / 5000] loss_train: 0.24967 accuracy_train: 0.93878
+MLP-A Epoch [4200 / 5000] loss_train: 0.20995 accuracy_train: 0.93989
+MLP-A Epoch [4300 / 5000] loss_train: 0.17835 accuracy_train: 0.94026
+MLP-A Epoch [4400 / 5000] loss_train: 0.16912 accuracy_train: 0.94026
+MLP-A Epoch [4500 / 5000] loss_train: 0.16403 accuracy_train: 0.94026
+MLP-A Epoch [4600 / 5000] loss_train: 1.57892 accuracy_train: 0.34879
+MLP-A Epoch [4700 / 5000] loss_train: 1.54592 accuracy_train: 0.39666
+MLP-A Epoch [4800 / 5000] loss_train: 1.54113 accuracy_train: 0.39629
+MLP-A Epoch [4900 / 5000] loss_train: 1.53947 accuracy_train: 0.39369
+MLP-A Epoch [5000 / 5000] loss_train: 1.53840 accuracy_train: 0.39369
+MLP-A Training completed! Best accuracy: 1.0000
+MLP-A load_and_test called with model_path: ./logs/20250715_025230/1.pth
+Loading MLP-A model from: ./logs/20250715_025230/1.pth
+GPU memory cleared after fold 2
+
+
+=============================== Fold 3 ===============================
+Loaded synthetic data from SMOTE_full_fold2.pt: 1364 samples
+SMOTE synthetic data - using class-based adjacency matrices
+Using SMOTE_full augmentation: 1364 additional samples
+Adding 1364 augmented samples to training set
+Generating adjacency matrices for 1364 synthetic samples using average method
+Creating class-wise average adjacency matrices with 90.0% sparsification
+Class 0: processed 361 matrices, original avg degree: 1.00, target edges: 80
+Class 1: processed 155 matrices, original avg degree: 1.00, target edges: 80
+Class 2: processed 424 matrices, original avg degree: 1.00, target edges: 80
+Class 3: processed 260 matrices, original avg degree: 1.00, target edges: 80
+Class 4: processed 131 matrices, original avg degree: 1.00, target edges: 80
+Assigning class average adjacency matrices for 1364 synthetic samples (Option-M)
+Average adjacency assignment:
+  Class 0: 178 synthetic samples
+  Class 1: 384 synthetic samples
+  Class 2: 115 synthetic samples
+  Class 3: 279 synthetic samples
+  Class 4: 408 synthetic samples
+Final training set size: 2695 samples
+MLP-A Epoch [100 / 5000] loss_train: 1.05489 accuracy_train: 0.49833
+MLP-A Epoch [200 / 5000] loss_train: 0.57787 accuracy_train: 0.82635
+MLP-A Epoch [300 / 5000] loss_train: 0.22776 accuracy_train: 0.95547
+MLP-A Epoch [400 / 5000] loss_train: 0.45348 accuracy_train: 0.82004
+MLP-A Epoch [500 / 5000] loss_train: 0.15247 accuracy_train: 0.95733
+MLP-A Epoch [600 / 5000] loss_train: 0.13878 accuracy_train: 0.95733
+MLP-A Epoch [700 / 5000] loss_train: 1.35496 accuracy_train: 0.52430
+MLP-A Epoch [800 / 5000] loss_train: 1.04084 accuracy_train: 0.57959
+MLP-A Epoch [900 / 5000] loss_train: 0.98725 accuracy_train: 0.58627
+MLP-A Epoch [1000 / 5000] loss_train: 1.14619 accuracy_train: 0.48312
+MLP-A Epoch [1100 / 5000] loss_train: 0.87948 accuracy_train: 0.67495
+MLP-A Epoch [1200 / 5000] loss_train: 1.09734 accuracy_train: 0.53878
+MLP-A Epoch [1300 / 5000] loss_train: 0.97976 accuracy_train: 0.72356
+MLP-A Epoch [1400 / 5000] loss_train: 0.81956 accuracy_train: 0.78738
+MLP-A Epoch [1500 / 5000] loss_train: 0.80405 accuracy_train: 0.78776
+MLP-A Epoch [1600 / 5000] loss_train: 0.79540 accuracy_train: 0.78776
+MLP-A Epoch [1700 / 5000] loss_train: 0.78917 accuracy_train: 0.78776
+MLP-A Epoch [1800 / 5000] loss_train: 1.57252 accuracy_train: 0.38813
+MLP-A Epoch [1900 / 5000] loss_train: 1.46013 accuracy_train: 0.35584
+MLP-A Epoch [2000 / 5000] loss_train: 1.32777 accuracy_train: 0.41670
+MLP-A Epoch [2100 / 5000] loss_train: 1.33078 accuracy_train: 0.41781
+MLP-A Epoch [2200 / 5000] loss_train: 1.58094 accuracy_train: 0.24787
+MLP-A Epoch [2300 / 5000] loss_train: 1.58055 accuracy_train: 0.26494
+MLP-A Epoch [2400 / 5000] loss_train: 1.58067 accuracy_train: 0.26494
+MLP-A Epoch [2500 / 5000] loss_train: 1.58092 accuracy_train: 0.26234
+MLP-A Epoch [2600 / 5000] loss_train: 1.58112 accuracy_train: 0.25937
+MLP-A Epoch [2700 / 5000] loss_train: 1.58129 accuracy_train: 0.25677
+MLP-A Epoch [2800 / 5000] loss_train: 1.58145 accuracy_train: 0.25455
+MLP-A Epoch [2900 / 5000] loss_train: 1.58157 accuracy_train: 0.25269
+MLP-A Epoch [3000 / 5000] loss_train: 1.58173 accuracy_train: 0.25083
+MLP-A Epoch [3100 / 5000] loss_train: 1.58217 accuracy_train: 0.27236
+MLP-A Epoch [3200 / 5000] loss_train: 1.58187 accuracy_train: 0.25380
+MLP-A Epoch [3300 / 5000] loss_train: 1.58203 accuracy_train: 0.24824
+MLP-A Epoch [3400 / 5000] loss_train: 1.58218 accuracy_train: 0.24750
+MLP-A Epoch [3500 / 5000] loss_train: 1.58230 accuracy_train: 0.24824
+MLP-A Epoch [3600 / 5000] loss_train: 1.58236 accuracy_train: 0.24601
+MLP-A Epoch [3700 / 5000] loss_train: 1.52505 accuracy_train: 0.30056
+MLP-A Epoch [3800 / 5000] loss_train: 1.58344 accuracy_train: 0.25603
+MLP-A Epoch [3900 / 5000] loss_train: 1.58347 accuracy_train: 0.24675
+MLP-A Epoch [4000 / 5000] loss_train: 1.46341 accuracy_train: 0.40297
+MLP-A Epoch [4100 / 5000] loss_train: 1.58431 accuracy_train: 0.23562
+MLP-A Epoch [4200 / 5000] loss_train: 1.58231 accuracy_train: 0.24267
+MLP-A Epoch [4300 / 5000] loss_train: 1.58214 accuracy_train: 0.24527
+MLP-A Epoch [4400 / 5000] loss_train: 1.58202 accuracy_train: 0.24490
+MLP-A Epoch [4500 / 5000] loss_train: 1.48512 accuracy_train: 0.36178
+MLP-A Epoch [4600 / 5000] loss_train: 1.41061 accuracy_train: 0.37811
+MLP-A Epoch [4700 / 5000] loss_train: 1.35157 accuracy_train: 0.40148
+MLP-A Epoch [4800 / 5000] loss_train: 1.54071 accuracy_train: 0.31132
+MLP-A Epoch [4900 / 5000] loss_train: 1.52970 accuracy_train: 0.29314
+MLP-A Epoch [5000 / 5000] loss_train: 0.84317 accuracy_train: 0.69685
+MLP-A Training completed! Best accuracy: 0.9573
+MLP-A load_and_test called with model_path: ./logs/20250715_025230/2.pth
+Loading MLP-A model from: ./logs/20250715_025230/2.pth
+GPU memory cleared after fold 3
+
+
+=============================== Fold 4 ===============================
+Loaded synthetic data from SMOTE_full_fold3.pt: 1387 samples
+SMOTE synthetic data - using class-based adjacency matrices
+Using SMOTE_full augmentation: 1387 additional samples
+Adding 1387 augmented samples to training set
+Generating adjacency matrices for 1387 synthetic samples using average method
+Creating class-wise average adjacency matrices with 90.0% sparsification
+Class 0: processed 371 matrices, original avg degree: 1.00, target edges: 80
+Class 1: processed 153 matrices, original avg degree: 1.00, target edges: 80
+Class 2: processed 407 matrices, original avg degree: 1.00, target edges: 80
+Class 3: processed 241 matrices, original avg degree: 1.00, target edges: 80
+Class 4: processed 136 matrices, original avg degree: 1.00, target edges: 80
+Assigning class average adjacency matrices for 1387 synthetic samples (Option-M)
+Average adjacency assignment:
+  Class 0: 168 synthetic samples
+  Class 1: 386 synthetic samples
+  Class 2: 132 synthetic sampleswandb: creating run
+wandb: Tracking run with wandb version 0.21.0
+wandb: Run data is saved locally in /home/user14/bagle/classifier/wandb/run-20250715_030001-22puwydb
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run adni_ct_mlp-a_SMOTE_full_fold_4
+wandb: ⭐️ View project at https://wandb.ai/ahnha_ahnha/adni_ct_mlp-a
+wandb: 🚀 View run at https://wandb.ai/ahnha_ahnha/adni_ct_mlp-a/runs/22puwydb
+wandb: uploading history steps 0-0, summary, console lines 47-54
+wandb:                                                                                
+wandb: 
+wandb: Run history:
+wandb:         test_acc ▁
+wandb:       test_auroc ▁
+wandb:          test_f1 ▁
+wandb: test_macro_auroc ▁
+wandb:    test_macro_f1 ▁
+wandb:        test_prec ▁
+wandb:         test_rec ▁
+wandb: 
+wandb: Run summary:
+wandb:         test_acc 0.3065
+wandb:       test_auroc 0.6477
+wandb:          test_f1 0.2799
+wandb: test_macro_auroc 0.6477
+wandb:    test_macro_f1 0.2799
+wandb:        test_prec 0.2663
+wandb:         test_rec 0.3556
+wandb: 
+wandb: 🚀 View run adni_ct_mlp-a_SMOTE_full_fold_4 at: https://wandb.ai/ahnha_ahnha/adni_ct_mlp-a/runs/22puwydb
+wandb: ⭐️ View project at: https://wandb.ai/ahnha_ahnha/adni_ct_mlp-a
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20250715_030001-22puwydb/logs
+wandb: Tracking run with wandb version 0.21.0
+wandb: Run data is saved locally in /home/user14/bagle/classifier/wandb/run-20250715_030233-zu32h4o2
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run adni_ct_mlp-a_SMOTE_full_fold_5
+wandb: ⭐️ View project at https://wandb.ai/ahnha_ahnha/adni_ct_mlp-a
+wandb: 🚀 View run at https://wandb.ai/ahnha_ahnha/adni_ct_mlp-a/runs/zu32h4o2
+
+  Class 3: 298 synthetic samples
+  Class 4: 403 synthetic samples
+Final training set size: 2695 samples
+MLP-A Epoch [100 / 5000] loss_train: 0.53747 accuracy_train: 0.85455
+Saved best MLP-A model with accuracy 0.8545 to ./logs/20250715_025230/3.pth
+MLP-A Epoch [200 / 5000] loss_train: 0.36177 accuracy_train: 0.89314
+MLP-A Epoch [300 / 5000] loss_train: 0.29897 accuracy_train: 0.90724
+Saved best MLP-A model with accuracy 0.9072 to ./logs/20250715_025230/3.pth
+MLP-A Epoch [400 / 5000] loss_train: 0.08791 accuracy_train: 0.99963
+MLP-A Epoch [500 / 5000] loss_train: 0.06848 accuracy_train: 1.00000
+MLP-A Epoch [600 / 5000] loss_train: 0.05707 accuracy_train: 1.00000
+MLP-A Epoch [700 / 5000] loss_train: 0.38845 accuracy_train: 0.91763
+MLP-A Epoch [800 / 5000] loss_train: 0.30186 accuracy_train: 0.94397
+MLP-A Epoch [900 / 5000] loss_train: 0.22440 accuracy_train: 0.97254
+MLP-A Epoch [1000 / 5000] loss_train: 0.12215 accuracy_train: 0.99926
+MLP-A Epoch [1100 / 5000] loss_train: 0.10793 accuracy_train: 0.99963
+MLP-A Epoch [1200 / 5000] loss_train: 0.09777 accuracy_train: 0.99963
+MLP-A Epoch [1300 / 5000] loss_train: 0.09011 accuracy_train: 0.99963
+MLP-A Epoch [1400 / 5000] loss_train: 0.08311 accuracy_train: 0.99963
+MLP-A Epoch [1500 / 5000] loss_train: 0.08302 accuracy_train: 0.99963
+MLP-A Epoch [1600 / 5000] loss_train: 0.07261 accuracy_train: 0.99963
+MLP-A Epoch [1700 / 5000] loss_train: 0.73351 accuracy_train: 0.72282
+MLP-A Epoch [1800 / 5000] loss_train: 0.62735 accuracy_train: 0.73284
+MLP-A Epoch [1900 / 5000] loss_train: 0.79710 accuracy_train: 0.66531
+MLP-A Epoch [2000 / 5000] loss_train: 0.79847 accuracy_train: 0.67236
+MLP-A Epoch [2100 / 5000] loss_train: 0.79883 accuracy_train: 0.67124
+MLP-A Epoch [2200 / 5000] loss_train: 0.75683 accuracy_train: 0.65566
+MLP-A Epoch [2300 / 5000] loss_train: 0.73299 accuracy_train: 0.63562
+MLP-A Epoch [2400 / 5000] loss_train: 0.47941 accuracy_train: 0.81484
+MLP-A Epoch [2500 / 5000] loss_train: 0.48807 accuracy_train: 0.78850
+MLP-A Epoch [2600 / 5000] loss_train: 0.45653 accuracy_train: 0.79369
+MLP-A Epoch [2700 / 5000] loss_train: 0.45430 accuracy_train: 0.79518
+MLP-A Epoch [2800 / 5000] loss_train: 0.42294 accuracy_train: 0.79963
+MLP-A Epoch [2900 / 5000] loss_train: 0.40721 accuracy_train: 0.80074
+MLP-A Epoch [3000 / 5000] loss_train: 0.31165 accuracy_train: 0.84712
+MLP-A Epoch [3100 / 5000] loss_train: 0.33713 accuracy_train: 0.84861
+MLP-A Epoch [3200 / 5000] loss_train: 0.10081 accuracy_train: 0.99963
+MLP-A Epoch [3300 / 5000] loss_train: 0.08799 accuracy_train: 1.00000
+MLP-A Epoch [3400 / 5000] loss_train: 0.08028 accuracy_train: 1.00000
+MLP-A Epoch [3500 / 5000] loss_train: 0.07482 accuracy_train: 1.00000
+MLP-A Epoch [3600 / 5000] loss_train: 0.07028 accuracy_train: 1.00000
+MLP-A Epoch [3700 / 5000] loss_train: 0.06631 accuracy_train: 1.00000
+MLP-A Epoch [3800 / 5000] loss_train: 0.06005 accuracy_train: 1.00000
+MLP-A Epoch [3900 / 5000] loss_train: 0.04950 accuracy_train: 1.00000
+MLP-A Epoch [4000 / 5000] loss_train: 1.08164 accuracy_train: 0.48831
+MLP-A Epoch [4100 / 5000] loss_train: 1.06924 accuracy_train: 0.48831
+MLP-A Epoch [4200 / 5000] loss_train: 1.06366 accuracy_train: 0.48831
+MLP-A Epoch [4300 / 5000] loss_train: 1.05761 accuracy_train: 0.49536
+MLP-A Epoch [4400 / 5000] loss_train: 1.05071 accuracy_train: 0.50575
+MLP-A Epoch [4500 / 5000] loss_train: 1.04663 accuracy_train: 0.51837
+MLP-A Epoch [4600 / 5000] loss_train: 0.92591 accuracy_train: 0.58442
+MLP-A Epoch [4700 / 5000] loss_train: 1.03069 accuracy_train: 0.53210
+MLP-A Epoch [4800 / 5000] loss_train: 0.85427 accuracy_train: 0.63414
+MLP-A Epoch [4900 / 5000] loss_train: 0.84734 accuracy_train: 0.63414
+MLP-A Epoch [5000 / 5000] loss_train: 0.76833 accuracy_train: 0.73210
+MLP-A Training completed! Best accuracy: 1.0000
+MLP-A load_and_test called with model_path: ./logs/20250715_025230/3.pth
+Loading MLP-A model from: ./logs/20250715_025230/3.pth
+GPU memory cleared after fold 4
+
+
+=============================== Fold 5 ===============================
+Loaded synthetic data from SMOTE_full_fold4.pt: 1383 samples
+SMOTE synthetic data - using class-based adjacency matrices
+Using SMOTE_full augmentation: 1383 additional samples
+Adding 1383 augmented samples to training set
+Generating adjacency matrices for 1383 synthetic samples using average method
+Creating class-wise average adjacency matrices with 90.0% sparsification
+Class 0: processed 371 matrices, original avg degree: 1.00, target edges: 80
+Class 1: processed 163 matrices, original avg degree: 1.00, target edges: 80
+Class 2: processed 401 matrices, original avg degree: 1.00, target edges: 80
+Class 3: processed 238 matrices, original avg degree: 1.00, target edges: 80
+Class 4: processed 139 matrices, original avg degree: 1.00, target edges: 80
+Assigning class average adjacency matrices for 1383 synthetic samples (Option-M)
+Average adjacency assignment:
+  Class 0: 168 synthetic samples
+  Class 1: 376 synthetic samples
+  Class 2: 138 synthetic samples
+  Class 3: 301 synthetic samples
+  Class 4: 400 synthetic samples
+Final training set size: 2695 samples
+MLP-A Epoch [100 / 5000] loss_train: 1.13250 accuracy_train: 0.51243
+MLP-A Epoch [200 / 5000] loss_train: 0.61330 accuracy_train: 0.80037
+MLP-A Epoch [300 / 5000] loss_train: 0.41314 accuracy_train: 0.84972
+MLP-A Epoch [400 / 5000] loss_train: 0.21232 accuracy_train: 0.94434
+Saved best MLP-A model with accuracy 0.9443 to ./logs/20250715_025230/4.pth
+MLP-A Epoch [500 / 5000] loss_train: 0.17285 accuracy_train: 0.94879
+MLP-A Epoch [600 / 5000] loss_train: 0.21524 accuracy_train: 0.93729
+MLP-A Epoch [700 / 5000] loss_train: 0.15664 accuracy_train: 0.94842
+MLP-A Epoch [800 / 5000] loss_train: 0.14951 accuracy_train: 0.94879
+MLP-A Epoch [900 / 5000] loss_train: 0.14405 accuracy_train: 0.94879
+MLP-A Epoch [1000 / 5000] loss_train: 0.14200 accuracy_train: 0.94879
+MLP-A Epoch [1100 / 5000] loss_train: 0.30228 accuracy_train: 0.86234
+MLP-A Epoch [1200 / 5000] loss_train: 0.27571 accuracy_train: 0.86234
+MLP-A Epoch [1300 / 5000] loss_train: 0.27670 accuracy_train: 0.86234
+MLP-A Epoch [1400 / 5000] loss_train: 0.26365 accuracy_train: 0.86234
+MLP-A Epoch [1500 / 5000] loss_train: 0.26297 accuracy_train: 0.86197
+MLP-A Epoch [1600 / 5000] loss_train: 0.77049 accuracy_train: 0.70835
+MLP-A Epoch [1700 / 5000] loss_train: 0.51115 accuracy_train: 0.75065
+MLP-A Epoch [1800 / 5000] loss_train: 0.34956 accuracy_train: 0.81076
+MLP-A Epoch [1900 / 5000] loss_train: 0.25891 accuracy_train: 0.86234
+MLP-A Epoch [2000 / 5000] loss_train: 0.35309 accuracy_train: 0.84156
+MLP-A Epoch [2100 / 5000] loss_train: 0.49912 accuracy_train: 0.80779
+MLP-A Epoch [2200 / 5000] loss_train: 0.31064 accuracy_train: 0.86382
+MLP-A Epoch [2300 / 5000] loss_train: 0.05967 accuracy_train: 0.99963
+MLP-A Epoch [2400 / 5000] loss_train: 0.05128 accuracy_train: 1.00000
+MLP-A Epoch [2500 / 5000] loss_train: 0.04692 accuracy_train: 1.00000
+MLP-A Epoch [2600 / 5000] loss_train: 0.04381 accuracy_train: 1.00000
+MLP-A Epoch [2700 / 5000] loss_train: 0.04136 accuracy_train: 1.00000
+MLP-A Epoch [2800 / 5000] loss_train: 0.03932 accuracy_train: 1.00000
+MLP-A Epoch [2900 / 5000] loss_train: 0.03757 accuracy_train: 1.00000
+MLP-A Epoch [3000 / 5000] loss_train: 0.03605 accuracy_train: 1.00000
+MLP-A Epoch [3100 / 5000] loss_train: 0.03471 accuracy_train: 1.00000
+MLP-A Epoch [3200 / 5000] loss_train: 0.03352 accuracy_train: 1.00000
+MLP-A Epoch [3300 / 5000] loss_train: 0.03246 accuracy_train: 1.00000
+MLP-A Epoch [3400 / 5000] loss_train: 1.59239 accuracy_train: 0.30390
+MLP-A Epoch [3500 / 5000] loss_train: 1.35552 accuracy_train: 0.33952
+MLP-A Epoch [3600 / 5000] loss_train: 1.34891 accuracy_train: 0.33952
+MLP-A Epoch [3700 / 5000] loss_train: 1.22388 accuracy_train: 0.50093
+MLP-A Epoch [3800 / 5000] loss_train: 1.06699 accuracy_train: 0.58145
+MLP-A Epoch [3900 / 5000] loss_train: 1.08178 accuracy_train: 0.58738
+MLP-A Epoch [4000 / 5000] loss_train: 0.87816 accuracy_train: 0.65751
+MLP-A Epoch [4100 / 5000] loss_train: 0.70050 accuracy_train: 0.71985
+MLP-A Epoch [4200 / 5000] loss_train: 0.60490 accuracy_train: 0.73655
+MLP-A Epoch [4300 / 5000] loss_train: 0.58980 accuracy_train: 0.73692
+wandb: uploading config.yaml
+wandb:                                                                                
+wandb: 
+wandb: Run history:
+wandb:         test_acc ▁
+wandb:       test_auroc ▁
+wandb:          test_f1 ▁
+wandb: test_macro_auroc ▁
+wandb:    test_macro_f1 ▁
+wandb:        test_prec ▁
+wandb:         test_rec ▁
+wandb: 
+wandb: Run summary:
+wandb:         test_acc 0.3313
+wandb:       test_auroc 0.625
+wandb:          test_f1 0.2925
+wandb: test_macro_auroc 0.625
+wandb:    test_macro_f1 0.2925
+wandb:        test_prec 0.2815
+wandb:         test_rec 0.3309
+wandb: 
+wandb: 🚀 View run adni_ct_mlp-a_SMOTE_full_fold_5 at: https://wandb.ai/ahnha_ahnha/adni_ct_mlp-a/runs/zu32h4o2
+wandb: ⭐️ View project at: https://wandb.ai/ahnha_ahnha/adni_ct_mlp-a
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20250715_030233-zu32h4o2/logs
+MLP-A Epoch [4400 / 5000] loss_train: 0.54941 accuracy_train: 0.73618
+MLP-A Epoch [4500 / 5000] loss_train: 0.76407 accuracy_train: 0.69796
+MLP-A Epoch [4600 / 5000] loss_train: 0.18161 accuracy_train: 0.93618
+MLP-A Epoch [4700 / 5000] loss_train: 0.16401 accuracy_train: 0.93692
+MLP-A Epoch [4800 / 5000] loss_train: 0.15197 accuracy_train: 0.93692
+MLP-A Epoch [4900 / 5000] loss_train: 1.36088 accuracy_train: 0.46716
+MLP-A Epoch [5000 / 5000] loss_train: 0.85015 accuracy_train: 0.58961
+MLP-A Training completed! Best accuracy: 1.0000
+MLP-A load_and_test called with model_path: ./logs/20250715_025230/4.pth
+Loading MLP-A model from: ./logs/20250715_025230/4.pth
+GPU memory cleared after fold 5
+--------------- Result ---------------
+Label distribution:   Counter({2: 505, 0: 467, 3: 309, 1: 194, 4: 169})
+5-Fold test loss:     [2.0428531169891357, 1.7160298824310303, 1.7497552633285522, 1.7659891843795776, 1.9810200929641724]
+5-Fold test accuracy: [0.2985074626865672, 0.35670731707317077, 0.2619808306709265, 0.306547619047619, 0.3313253012048193]
+---------- Confusion Matrix ----------
+5-Fold precision:     [0.25127166089042924, 0.3075844727810094, 0.21683271655844596, 0.26625467814620307, 0.2815287340253265]
+5-Fold specificity:   [0.810637295531448, 0.8294022299429997, 0.7938479571817485, 0.8128771701982634, 0.8210304577245566]
+5-Fold sensitivity:   [0.28745286612682835, 0.34430401653840864, 0.33086868247223167, 0.35559732664995825, 0.3308611864108431]
+5-Fold f1 score:      [0.2617873549507206, 0.29960555540305983, 0.2263742589297908, 0.2799035097210736, 0.29254876401188346]
+5-Fold AUROC:         [0.5598985253872651, 0.6497148141608646, 0.6078482494944721, 0.6476828788424858, 0.625030640861316]
+5-Fold Macro F1:      [0.2617873549507206, 0.2996055554030599, 0.2263742589297908, 0.27990350972107353, 0.29254876401188346]
+5-Fold Macro AUROC:   [0.5598985253872651, 0.6497148141608646, 0.6078482494944721, 0.6476828788424858, 0.625030640861316]
+-------------- Mean, Std --------------
+Acc:   0.3110 ± 0.0319
+Prec:  0.2647 ± 0.0303
+Rec:   0.3298 ± 0.0231
+F1:    0.2720 ± 0.0262
+AUROC: 0.6180 ± 0.0329
+Macro F1: 0.2720 ± 0.0262
+Macro AUROC: 0.6180 ± 0.0329
+Results saved to /home/user14/bagle/summary/experiment_summary.xlsx
+Excel summary saved to: /home/user14/bagle/summary/experiment_summary.xlsx
+GPU memory cleared after experiment completion
+
+Time: 0:12:32
+Final GPU memory cleanup completed
+
+종료 시간: Tue Jul 15 03:05:03 UTC 2025
+종료 코드: 0
+✓ 실험 완료: mlp-a_SMOTE_full_average

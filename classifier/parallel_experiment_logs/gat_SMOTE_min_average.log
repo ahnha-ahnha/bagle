@@ -1,0 +1,1125 @@
+=== 실험 시작: gat_SMOTE_min_average ===
+GPU: 7
+시작 시간: Tue Jul 15 03:05:09 UTC 2025
+
+wandb: Currently logged in as: ahnha (ahnha_ahnha) to https://api.wandb.ai. Use `wandb login --relogin` to force relogin
+wandb: WARNING Using a boolean value for 'reinit' is deprecated. Use 'return_previous' or 'finish_previous' instead.
+wandb: Tracking run with wandb version 0.21.0
+wandb: Run data is saved locally in /home/user14/bagle/classifier/wandb/run-20250715_030517-4was1i7f
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run adni_ct_gat_SMOTE_min_fold_1
+wandb: ⭐️ View project at https://wandb.ai/ahnha_ahnha/adni_ct_gat
+wandb: 🚀 View run at https://wandb.ai/ahnha_ahnha/adni_ct_gat/runs/4was1i7f
+wandb: uploading output.log; uploading wandb-summary.json; uploading config.yaml
+wandb: uploading history steps 4997-5000, summary, console lines 148-153
+wandb:                                                                                
+wandb: 
+wandb: Run history:
+wandb:            epoch ▁▁▁▁▁▂▂▂▂▂▂▃▃▃▃▃▃▃▃▄▄▄▄▅▅▅▅▅▆▆▆▆▇▇▇▇▇▇██
+wandb:         test_acc ▅▇██▅▃▄▄▂▂▃▃▄▃▅▁▅▂▄▇▄▄▅▅▆▅▆▆▇▄▇▅▆▅▃▅▄▁▅▅
+wandb:       test_auroc ▁
+wandb:          test_f1 ▁
+wandb:        test_loss ▁▁▁▁▁▂▂▂▂▂▄▄▅▂▃▂▃▃▂▂▂▄▂▂▃▂█▂▃▃▂▃▃▅▄▄▃▃▃▃
+wandb: test_macro_auroc ▁
+wandb:    test_macro_f1 ▁
+wandb:        test_prec ▁
+wandb:         test_rec ▁
+wandb:        train_acc ▁▂▃▃▅▅▇▇▄▆▆▇▆▇█▇▅▆▆▇▇▇▇▆▁▄▆▆▇▅▇▇▇▃▃▅▅▄▅▆
+wandb:       train_loss █▅▅▄▄▂▃▃▂▁▃▂▁▂▁▂▃▁▂▁▂▂▁▃▃▁▂▁▁▂▂▂▆▁▇▅▅▅▄▄
+wandb: 
+wandb: Run summary:
+wandb:            epoch 5000
+wandb:         test_acc 0.394
+wandb:       test_auroc 0.5945
+wandb:          test_f1 0.2966
+wandb:        test_loss 1.87343
+wandb: test_macro_auroc 0.5945
+wandb:    test_macro_f1 0.2372
+wandb:        test_prec 0.2692
+wandb:         test_rec 0.3397
+wandb:        train_acc 0.6987
+wandb:       train_loss 0.74987
+wandb: 
+wandb: 🚀 View run adni_ct_gat_SMOTE_min_fold_1 at: https://wandb.ai/ahnha_ahnha/adni_ct_gat/runs/4was1i7f
+wandb: ⭐️ View project at: https://wandb.ai/ahnha_ahnha/adni_ct_gat
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20250715_030517-4was1i7f/logs
+Auto-generated run_name: adni_ct_gat_SMOTE_min
+Loading data from: /home/user14/bagle/data/ADNI_CT/real.pt
+Data loaded successfully:
+  Samples: 1644
+  Features shape: torch.Size([1644, 160, 1])
+  Labels shape: torch.Size([1644])
+  Unique labels: tensor([0, 1, 2, 3, 4])
+  Fold values: tensor([0, 1, 2, 3, 4])
+Number of classes: 5
+Using existing fold information for K-fold cross validation
+Fold 0: 1309 train samples, 335 test samples
+Fold 1: 1316 train samples, 328 test samples
+Fold 2: 1331 train samples, 313 test samples
+Fold 3: 1308 train samples, 336 test samples
+Fold 4: 1312 train samples, 332 test samples
+save directory:  ./logs/20250715_030515
+
+
+=============================== Fold 1 ===============================
+Loaded synthetic data from SMOTE_min_fold0.pt: 616 samples
+SMOTE synthetic data - using class-based adjacency matrices
+Using SMOTE_min augmentation: 616 additional samples
+Adding 616 augmented samples to training set
+Generating adjacency matrices for 616 synthetic samples using average method
+Creating class-wise average adjacency matrices with 90.0% sparsification
+Class 0: processed 385 matrices, original avg degree: 1.00, target edges: 80
+Class 1: processed 153 matrices, original avg degree: 1.00, target edges: 80
+Class 2: processed 384 matrices, original avg degree: 1.00, target edges: 80
+Class 3: processed 249 matrices, original avg degree: 1.00, target edges: 80
+Class 4: processed 138 matrices, original avg degree: 1.00, target edges: 80
+Assigning class average adjacency matrices for 616 synthetic samples (Option-M)
+Average adjacency assignment:
+  Class 1: 232 synthetic samples
+  Class 2: 1 synthetic samples
+  Class 3: 136 synthetic samples
+  Class 4: 247 synthetic samples
+Final training set size: 1925 samples
+
+GNN Epoch [100 / 5000] loss_train: 1.09083 accuracy_train: 0.53403
+ test_loss: 1.4920 test_acc: 0.3254
+
+GNN Epoch [200 / 5000] loss_train: 0.97388 accuracy_train: 0.58390
+ test_loss: 1.4839 test_acc: 0.3194
+
+GNN Epoch [300 / 5000] loss_train: 0.87867 accuracy_train: 0.63169
+ test_loss: 1.5726 test_acc: 0.2746
+
+GNN Epoch [400 / 5000] loss_train: 0.81813 accuracy_train: 0.67013
+ test_loss: 1.5577 test_acc: 0.3313
+
+GNN Epoch [500 / 5000] loss_train: 0.77225 accuracy_train: 0.69610
+ test_loss: 1.5587 test_acc: 0.3313
+
+GNN Epoch [600 / 5000] loss_train: 0.76246 accuracy_train: 0.68987
+ test_loss: 1.8774 test_acc: 0.1821
+
+GNN Epoch [700 / 5000] loss_train: 0.65796 accuracy_train: 0.73818
+ test_loss: 1.7844 test_acc: 0.2269
+
+GNN Epoch [800 / 5000] loss_train: 0.71640 accuracy_train: 0.70805
+ test_loss: 2.0156 test_acc: 0.1672
+
+GNN Epoch [900 / 5000] loss_train: 0.68319 accuracy_train: 0.73039
+ test_loss: 1.8512 test_acc: 0.2209
+
+GNN Epoch [1000 / 5000] loss_train: 0.69045 accuracy_train: 0.71948
+ test_loss: 3.0087 test_acc: 0.1224
+
+GNN Epoch [1100 / 5000] loss_train: 0.60429 accuracy_train: 0.76935
+ test_loss: 2.1396 test_acc: 0.1791
+
+GNN Epoch [1200 / 5000] loss_train: 0.59499 accuracy_train: 0.76000
+ test_loss: 1.9825 test_acc: 0.1761
+
+GNN Epoch [1300 / 5000] loss_train: 0.64254 accuracy_train: 0.74805
+ test_loss: 2.3239 test_acc: 0.1612
+
+GNN Epoch [1400 / 5000] loss_train: 0.68918 accuracy_train: 0.72000
+ test_loss: 1.8070 test_acc: 0.2179
+
+GNN Epoch [1500 / 5000] loss_train: 0.59453 accuracy_train: 0.76104
+ test_loss: 2.2419 test_acc: 0.1582
+
+GNN Epoch [1600 / 5000] loss_train: 0.59147 accuracy_train: 0.76727
+ test_loss: 1.7480 test_acc: 0.2657
+
+GNN Epoch [1700 / 5000] loss_train: 0.61474 accuracy_train: 0.75636
+ test_loss: 1.9232 test_acc: 0.2209
+
+GNN Epoch [1800 / 5000] loss_train: 0.59155 accuracy_train: 0.77091
+ test_loss: 2.2494 test_acc: 0.2060
+
+GNN Epoch [1900 / 5000] loss_train: 0.61630 accuracy_train: 0.75532
+ test_loss: 1.6243 test_acc: 0.2836
+
+GNN Epoch [2000 / 5000] loss_train: 0.61615 accuracy_train: 0.75065
+ test_loss: 1.9349 test_acc: 0.2358
+
+GNN Epoch [2100 / 5000] loss_train: 0.56949 accuracy_train: 0.77714
+ test_loss: 2.1598 test_acc: 0.2358
+
+GNN Epoch [2200 / 5000] loss_train: 0.63089 accuracy_train: 0.76208
+ test_loss: 2.7089 test_acc: 0.1701
+
+GNN Epoch [2300 / 5000] loss_train: 0.79889 accuracy_train: 0.67429
+ test_loss: 2.3794 test_acc: 0.2090
+
+GNN Epoch [2400 / 5000] loss_train: 0.77247 accuracy_train: 0.69506
+ test_loss: 2.0215 test_acc: 0.2896
+
+GNN Epoch [2500 / 5000] loss_train: 0.66497 accuracy_train: 0.72312
+ test_loss: 1.7855 test_acc: 0.2478
+
+GNN Epoch [2600 / 5000] loss_train: 0.62732 accuracy_train: 0.75221
+ test_loss: 1.6810 test_acc: 0.3045
+
+GNN Epoch [2700 / 5000] loss_train: 0.62637 accuracy_train: 0.75688
+ test_loss: 2.2751 test_acc: 0.1493
+
+GNN Epoch [2800 / 5000] loss_train: 0.58076 accuracy_train: 0.77558
+ test_loss: 2.0835 test_acc: 0.1642
+
+GNN Epoch [2900 / 5000] loss_train: 0.62789 accuracy_train: 0.76312
+ test_loss: 1.8422 test_acc: 0.2388
+
+GNN Epoch [3000 / 5000] loss_train: 0.75332 accuracy_train: 0.69558
+ test_loss: 1.8567 test_acc: 0.2657
+
+GNN Epoch [3100 / 5000] loss_train: 0.65150 accuracy_train: 0.74961
+ test_loss: 1.7833 test_acc: 0.2687
+
+GNN Epoch [3200 / 5000] loss_train: 0.73354 accuracy_train: 0.68571
+ test_loss: 1.7515 test_acc: 0.3910
+ [Saved best model with acc 0.3910 to ./logs/20250715_030515/0.pth]
+
+GNN Epoch [3300 / 5000] loss_train: 0.69065 accuracy_train: 0.72156
+ test_loss: 2.8176 test_acc: 0.2000
+
+GNN Epoch [3400 / 5000] loss_train: 0.64923 accuracy_train: 0.74805
+ test_loss: 2.2393 test_acc: 0.2209
+
+GNN Epoch [3500 / 5000] loss_train: 0.64780 accuracy_train: 0.74442
+ test_loss: 1.8610 test_acc: 0.2418
+
+GNN Epoch [3600 / 5000] loss_train: 0.74687 accuracy_train: 0.70130
+ test_loss: 1.7214 test_acc: 0.1373
+
+GNN Epoch [3700 / 5000] loss_train: 0.79834 accuracy_train: 0.67377
+ test_loss: 2.0444 test_acc: 0.2030
+
+GNN Epoch [3800 / 5000] loss_train: 0.67264 accuracy_train: 0.73974
+ test_loss: 2.0008 test_acc: 0.2567
+
+GNN Epoch [3900 / 5000] loss_train: 0.69582 accuracy_train: 0.71221
+ test_loss: 3.0925 test_acc: 0.1940
+
+GNN Epoch [4000 / 5000] loss_train: 0.67736 accuracy_train: 0.72364
+ test_loss: 2.2262 test_acc: 0.2537
+
+GNN Epoch [4100 / 5000] loss_train: 0.64680 accuracy_train: 0.75065
+ test_loss: 2.6122 test_acc: 0.1881
+
+GNN Epoch [4200 / 5000] loss_train: 0.70128 accuracy_train: 0.72364
+ test_loss: 2.6065 test_acc: 0.2179
+
+GNN Epoch [4300 / 5000] loss_train: 0.62880 accuracy_train: 0.75844
+ test_loss: 2.0924 test_acc: 0.2478
+
+GNN Epoch [4400 / 5000] loss_train: 1.05337 accuracy_train: 0.53506
+ test_loss: 1.7333 test_acc: 0.2448
+
+GNN Epoch [4500 / 5000] loss_train: 0.87588 accuracy_train: 0.63221
+ test_loss: 2.7355 test_acc: 0.1134
+
+GNN Epoch [4600 / 5000] loss_train: 0.82267 accuracy_train: 0.65818
+ test_loss: 1.9765 test_acc: 0.1463
+
+GNN Epoch [4700 / 5000] loss_train: 0.82441 accuracy_train: 0.66649
+ test_loss: 2.1885 test_acc: 0.2567
+
+GNN Epoch [4800 / 5000] loss_train: 0.80748 accuracy_train: 0.67273
+ test_loss: 2.2487 test_acc: 0.1731
+
+GNN Epoch [4900 / 5000] loss_train: 0.78136 accuracy_train: 0.68156
+ test_loss: 2.1313 test_acc: 0.2597
+
+GNN Epoch [5000 / 5000] loss_train: 0.74987 accuracy_train: 0.69870
+ test_loss: 1.8734 test_acc: 0.2418
+GNN Training completed! Best accuracy: 0.3940
+GNN load_and_test called with model_path: ./logs/20250715_030515/0.pth
+Loading GNN model from: ./logs/20250715_030515/0.pth
+GPU memory cleared after fold 1
+
+
+=============================== Fold 2 ===============================
+Loaded synthetic data from SMOTE_min_fold1.pt: 704 samples
+SMOTE synthetic data - using class-based adjacency matrices
+Using SMOTE_min augmentation: 704 additional samples
+Adding 704 augmented samples to training set
+Generating adjacency matrices for 704 synthetic samples using average method
+Creating class-wise average adjacency matrices with 90.0% sparsification
+Class 0: processed 380 matrices, original avg degree: 1.00, target edges: 80
+Class 1: processed 152 matrices, original avg degree: 1.00, target edges: 80
+Class 2: processed 404 matrices, original avg degree: 1.00, target edges: 80
+Class 3: processed 248 matrices, original avg degree: 1.00, target edges: 80
+Class 4: processed 132 matrices, original avg degree: 1.00, target edges: 80
+Assigning class average adjacency matrices for 704 synthetic samples (Option-M)
+wandb: creating run
+wandb: Tracking run with wandb version 0.21.0
+wandb: Run data is saved locally in /home/user14/bagle/classifier/wandb/run-20250715_031953-ar5uelbm
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run adni_ct_gat_SMOTE_min_fold_2
+wandb: ⭐️ View project at https://wandb.ai/ahnha_ahnha/adni_ct_gat
+wandb: 🚀 View run at https://wandb.ai/ahnha_ahnha/adni_ct_gat/runs/ar5uelbm
+wandb: uploading history steps 4943-5000, summary, console lines 147-152
+wandb:                                                                                
+wandb: 
+wandb: Run history:
+wandb:            epoch ▁▁▁▁▁▂▂▂▂▂▃▃▃▃▃▃▄▄▄▅▅▅▅▆▆▆▆▆▆▆▆▇▇▇▇▇▇███
+wandb:         test_acc █▆▆▇▆▅▆▄▅▅▄▂▃▆▇▇▆▁▆▃▁▇▅▅▂▅▅▇▆▇▆▅▅▄▅▄▄▇▃█
+wandb:       test_auroc ▁
+wandb:          test_f1 ▁
+wandb:        test_loss ▂▃▆▄▄▅▇▇█▇█▇▇▅▂▁▂▂▂▁▁▃▂▂▅▄▅▃▅▃▃▂▃▃▂▂▄▃▂▃
+wandb: test_macro_auroc ▁
+wandb:    test_macro_f1 ▁
+wandb:        test_prec ▁
+wandb:         test_rec ▁
+wandb:        train_acc ▄▇▇▇████▅▁▃▄▄▄▅▆▆▆▇▇█▇▅▇▇▂▂▁▁▂▂▁▁▃▃▄▃▂▄▄
+wandb:       train_loss ▂▁▁▂▁▁▁▁▁▁▁█▂▂▂▂▂▂▁▁▁▁▁▁▁▁▁▁▁▁▂▂▂▂▂▂▂▁▁▁
+wandb: 
+wandb: Run summary:
+wandb:            epoch 5000
+wandb:         test_acc 0.4024
+wandb:       test_auroc 0.6689
+wandb:          test_f1 0.2774
+wandb:        test_loss 1.49521
+wandb: test_macro_auroc 0.6689
+wandb:    test_macro_f1 0.2219
+wandb:        test_prec 0.2868
+wandb:         test_rec 0.358
+wandb:        train_acc 0.64802
+wandb:       train_loss 0.85617
+wandb: 
+wandb: 🚀 View run adni_ct_gat_SMOTE_min_fold_2 at: https://wandb.ai/ahnha_ahnha/adni_ct_gat/runs/ar5uelbm
+wandb: ⭐️ View project at: https://wandb.ai/ahnha_ahnha/adni_ct_gat
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20250715_031953-ar5uelbm/logs
+wandb: Tracking run with wandb version 0.21.0
+wandb: Run data is saved locally in /home/user14/bagle/classifier/wandb/run-20250715_033510-3s831gg6
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run adni_ct_gat_SMOTE_min_fold_3
+wandb: ⭐️ View project at https://wandb.ai/ahnha_ahnha/adni_ct_gat
+wandb: 🚀 View run at https://wandb.ai/ahnha_ahnha/adni_ct_gat/runs/3s831gg6
+Average adjacency assignment:
+  Class 0: 24 synthetic samples
+  Class 1: 252 synthetic samples
+  Class 3: 156 synthetic samples
+  Class 4: 272 synthetic samples
+Final training set size: 2020 samples
+
+GNN Epoch [100 / 5000] loss_train: 1.04158 accuracy_train: 0.57178
+ test_loss: 1.4771 test_acc: 0.3476
+
+GNN Epoch [200 / 5000] loss_train: 0.89049 accuracy_train: 0.62624
+ test_loss: 1.4756 test_acc: 0.3354
+
+GNN Epoch [300 / 5000] loss_train: 0.85746 accuracy_train: 0.64604
+ test_loss: 1.5323 test_acc: 0.3323
+
+GNN Epoch [400 / 5000] loss_train: 0.79581 accuracy_train: 0.68020
+ test_loss: 1.5889 test_acc: 0.2988
+
+GNN Epoch [500 / 5000] loss_train: 0.80309 accuracy_train: 0.67129
+ test_loss: 1.5808 test_acc: 0.2683
+
+GNN Epoch [600 / 5000] loss_train: 0.71140 accuracy_train: 0.71584
+ test_loss: 1.5996 test_acc: 0.2957
+
+GNN Epoch [700 / 5000] loss_train: 0.69516 accuracy_train: 0.72228
+ test_loss: 1.6214 test_acc: 0.2957
+
+GNN Epoch [800 / 5000] loss_train: 0.70092 accuracy_train: 0.72178
+ test_loss: 1.5944 test_acc: 0.2713
+
+GNN Epoch [900 / 5000] loss_train: 0.69234 accuracy_train: 0.71733
+ test_loss: 1.6706 test_acc: 0.2988
+
+GNN Epoch [1000 / 5000] loss_train: 0.67374 accuracy_train: 0.72574
+ test_loss: 1.6550 test_acc: 0.3049
+
+GNN Epoch [1100 / 5000] loss_train: 0.67073 accuracy_train: 0.74010
+ test_loss: 1.6766 test_acc: 0.2530
+
+GNN Epoch [1200 / 5000] loss_train: 0.66794 accuracy_train: 0.73861
+ test_loss: 1.7003 test_acc: 0.2134
+
+GNN Epoch [1300 / 5000] loss_train: 0.65979 accuracy_train: 0.72970
+ test_loss: 1.7059 test_acc: 0.2774
+
+GNN Epoch [1400 / 5000] loss_train: 0.65217 accuracy_train: 0.73564
+ test_loss: 1.7819 test_acc: 0.1982
+
+GNN Epoch [1500 / 5000] loss_train: 1.29975 accuracy_train: 0.43564
+ test_loss: 1.5320 test_acc: 0.3110
+
+GNN Epoch [1600 / 5000] loss_train: 1.06573 accuracy_train: 0.51782
+ test_loss: 1.4770 test_acc: 0.3171
+
+GNN Epoch [1700 / 5000] loss_train: 1.01697 accuracy_train: 0.55000
+ test_loss: 1.4567 test_acc: 0.3689
+
+GNN Epoch [1800 / 5000] loss_train: 0.97278 accuracy_train: 0.57871
+ test_loss: 1.4753 test_acc: 0.3232
+
+GNN Epoch [1900 / 5000] loss_train: 0.93724 accuracy_train: 0.59356
+ test_loss: 1.4555 test_acc: 0.3720
+
+GNN Epoch [2000 / 5000] loss_train: 0.93703 accuracy_train: 0.60050
+ test_loss: 1.4577 test_acc: 0.3659
+
+GNN Epoch [2100 / 5000] loss_train: 0.89555 accuracy_train: 0.63218
+ test_loss: 1.4876 test_acc: 0.3293
+
+GNN Epoch [2200 / 5000] loss_train: 0.88043 accuracy_train: 0.61931
+ test_loss: 1.4980 test_acc: 0.3201
+
+GNN Epoch [2300 / 5000] loss_train: 0.86438 accuracy_train: 0.64554
+ test_loss: 1.5463 test_acc: 0.2622
+
+GNN Epoch [2400 / 5000] loss_train: 0.83089 accuracy_train: 0.66139
+ test_loss: 1.5215 test_acc: 0.2561
+
+GNN Epoch [2500 / 5000] loss_train: 0.86606 accuracy_train: 0.64010
+ test_loss: 1.5474 test_acc: 0.2226
+
+GNN Epoch [2600 / 5000] loss_train: 0.83410 accuracy_train: 0.65000
+ test_loss: 1.5312 test_acc: 0.2439
+
+GNN Epoch [2700 / 5000] loss_train: 0.90047 accuracy_train: 0.62228
+ test_loss: 1.5571 test_acc: 0.3171
+
+GNN Epoch [2800 / 5000] loss_train: 0.80214 accuracy_train: 0.66386
+ test_loss: 1.5254 test_acc: 0.2713
+
+GNN Epoch [2900 / 5000] loss_train: 0.79094 accuracy_train: 0.67376
+ test_loss: 1.5153 test_acc: 0.2713
+
+GNN Epoch [3000 / 5000] loss_train: 0.85692 accuracy_train: 0.63366
+ test_loss: 1.6126 test_acc: 0.2530
+
+GNN Epoch [3100 / 5000] loss_train: 0.76623 accuracy_train: 0.67673
+ test_loss: 1.5690 test_acc: 0.2500
+
+GNN Epoch [3200 / 5000] loss_train: 0.73200 accuracy_train: 0.70297
+ test_loss: 1.5572 test_acc: 0.2988
+
+GNN Epoch [3300 / 5000] loss_train: 0.79932 accuracy_train: 0.67723
+ test_loss: 1.5598 test_acc: 0.3079
+
+GNN Epoch [3400 / 5000] loss_train: 0.74132 accuracy_train: 0.70248
+ test_loss: 1.5841 test_acc: 0.2256
+
+GNN Epoch [3500 / 5000] loss_train: 0.75884 accuracy_train: 0.69455
+ test_loss: 1.5616 test_acc: 0.2774
+
+GNN Epoch [3600 / 5000] loss_train: 0.77079 accuracy_train: 0.69703
+ test_loss: 1.5139 test_acc: 0.3232
+
+GNN Epoch [3700 / 5000] loss_train: 0.73886 accuracy_train: 0.69802
+ test_loss: 1.5556 test_acc: 0.3415
+
+GNN Epoch [3800 / 5000] loss_train: 0.74295 accuracy_train: 0.69752
+ test_loss: 1.5172 test_acc: 0.2957
+
+GNN Epoch [3900 / 5000] loss_train: 0.99136 accuracy_train: 0.55099
+ test_loss: 1.5170 test_acc: 0.2744
+
+GNN Epoch [4000 / 5000] loss_train: 0.97695 accuracy_train: 0.54406
+ test_loss: 1.5015 test_acc: 0.3262
+
+GNN Epoch [4100 / 5000] loss_train: 0.99301 accuracy_train: 0.54802
+ test_loss: 1.5060 test_acc: 0.2957
+
+GNN Epoch [4200 / 5000] loss_train: 0.99209 accuracy_train: 0.53465
+ test_loss: 1.4970 test_acc: 0.2622
+
+GNN Epoch [4300 / 5000] loss_train: 0.99797 accuracy_train: 0.55891
+ test_loss: 1.5004 test_acc: 0.3018
+
+GNN Epoch [4400 / 5000] loss_train: 1.00600 accuracy_train: 0.53267
+ test_loss: 1.6862 test_acc: 0.2774
+
+GNN Epoch [4500 / 5000] loss_train: 0.96984 accuracy_train: 0.55792
+ test_loss: 1.4985 test_acc: 0.3171
+
+GNN Epoch [4600 / 5000] loss_train: 0.91095 accuracy_train: 0.61832
+ test_loss: 1.5015 test_acc: 0.3262
+
+GNN Epoch [4700 / 5000] loss_train: 0.90588 accuracy_train: 0.60891
+ test_loss: 1.4890 test_acc: 0.3201
+
+GNN Epoch [4800 / 5000] loss_train: 0.89181 accuracy_train: 0.61238
+ test_loss: 1.5277 test_acc: 0.3171
+
+GNN Epoch [4900 / 5000] loss_train: 0.88824 accuracy_train: 0.62475
+ test_loss: 1.4761 test_acc: 0.3720
+
+GNN Epoch [5000 / 5000] loss_train: 0.85617 accuracy_train: 0.64802
+ test_loss: 1.4952 test_acc: 0.3537
+GNN Training completed! Best accuracy: 0.4024
+GNN load_and_test called with model_path: ./logs/20250715_030515/1.pth
+Loading GNN model from: ./logs/20250715_030515/1.pth
+GPU memory cleared after fold 2
+
+
+=============================== Fold 3 ===============================
+Loaded synthetic data from SMOTE_min_fold2.pt: 789 samples
+SMOTE synthetic data - using class-based adjacency matrices
+Using SMOTE_min augmentation: 789 additional samples
+Adding 789 augmented samples to training set
+Generating adjacency matrices for 789 synthetic samples using average method
+Creating class-wise average adjacency matrices with 90.0% sparsification
+Class 0: processed 361 matrices, original avg degree: 1.00, target edges: 80
+Class 1: processed 155 matrices, original avg degree: 1.00, target edges: 80
+Class 2: processed 424 matrices, original avg degree: 1.00, target edges: 80
+Class 3: processed 260 matrices, original avg degree: 1.00, target edges: 80
+Class 4: processed 131 matrices, original avg degree: 1.00, target edges: 80
+Assigning class average adjacency matrices for 789 synthetic samples (Option-M)
+Average adjacency assignment:
+  Class 0: 63 synthetic samples
+  Class 1: 269 synthetic samples
+  Class 3: 164 synthetic samples
+  Class 4: 293 synthetic samples
+Final training set size: 2120 samples
+
+GNN Epoch [100 / 5000] loss_train: 1.02278 accuracy_train: 0.55755
+ test_loss: 1.5425 test_acc: 0.2780
+
+GNN Epoch [200 / 5000] loss_train: 0.95145 accuracy_train: 0.58726
+ test_loss: 1.5085 test_acc: 0.3323
+
+GNN Epoch [300 / 5000] loss_train: 0.85146 accuracy_train: 0.64811
+ test_loss: 1.5318 test_acc: 0.2971
+
+GNN Epoch [400 / 5000] loss_train: 0.84245 accuracy_train: 0.64387
+ test_loss: 1.5351 test_acc: 0.2716
+
+GNN Epoch [500 / 5000] loss_train: 0.76664 accuracy_train: 0.68019
+ test_loss: 1.5478 test_acc: 0.2620
+
+GNN Epoch [600 / 5000] loss_train: 0.73847 accuracy_train: 0.70142
+ test_loss: 1.5759 test_acc: 0.2460
+
+GNN Epoch [700 / 5000] loss_train: 0.75686 accuracy_train: 0.69811
+ test_loss: 1.5632 test_acc: 0.2843
+
+GNN Epoch [800 / 5000] loss_train: 0.74583 accuracy_train: 0.69104
+ test_loss: 1.5763 test_acc: 0.2780
+
+GNN Epoch [900 / 5000] loss_train: 0.68879 accuracy_train: 0.72123
+ test_loss: 1.6981 test_acc: 0.2492
+
+GNN Epoch [1000 / 5000] loss_train: 0.71006 accuracy_train: 0.72170
+ test_loss: 1.8241 test_acc: 0.2109
+
+GNN Epoch [1100 / 5000] loss_train: 0.64263 accuracy_train: 0.73255
+ test_loss: 1.7508 test_acc: 0.1981
+
+GNN Epoch [1200 / 5000] loss_train: 0.64492 accuracy_train: 0.74340
+ test_loss: 1.6624 test_acc: 0.2300
+
+GNN Epoch [1300 / 5000] loss_train: 0.76851 accuracy_train: 0.67500
+ test_loss: 1.6503 test_acc: 0.2684
+
+GNN Epoch [1400 / 5000] loss_train: 0.60919 accuracy_train: 0.75660
+wandb: uploading history steps 4930-5000, summary, console lines 147-152
+wandb:                                                                                
+wandb: 
+wandb: Run history:
+wandb:            epoch ▁▁▁▁▂▂▂▂▂▃▃▃▃▃▄▄▄▄▄▄▄▅▅▅▅▅▅▅▅▆▆▆▇▇▇▇▇▇▇█
+wandb:         test_acc ▄▅▅▆▁▄▅▂▃▄▃▆▃▆▄▂▄▃▄▆▆▆▃▃▃▂▇▆▇▇▅▃█▃▃▁▃▄▄▆
+wandb:       test_auroc ▁
+wandb:          test_f1 ▁
+wandb:        test_loss ▁▁▁▁▁▁▃▁▃▂▁▃▃▃▂▂▂▃▃▂▄▂▂▃▃▂▃▃▄▂▂▂▃█▃▄▃▃▁▁
+wandb: test_macro_auroc ▁
+wandb:    test_macro_f1 ▁
+wandb:        test_prec ▁
+wandb:         test_rec ▁
+wandb:        train_acc ▁▂▃▄▃▅▆▅▆▇▆▆▆▆▇▇▇▇▇▇▇▇▇▇▇█▇▆▇█▅██▇█▇██▂▂
+wandb:       train_loss ██▇▆▅▄▄▄▄▃▄▃▅▃▃▃▃▄▃▂▂▂▃▂▁▃▂▁▂▂▂▁▃▂▁▂▂▂██
+wandb: 
+wandb: Run summary:
+wandb:            epoch 5000
+wandb:         test_acc 0.3802
+wandb:       test_auroc 0.5818
+wandb:          test_f1 0.2855
+wandb:        test_loss 1.5621
+wandb: test_macro_auroc 0.5818
+wandb:    test_macro_f1 0.2284
+wandb:        test_prec 0.2646
+wandb:         test_rec 0.3187
+wandb:        train_acc 0.57311
+wandb:       train_loss 0.96527
+wandb: 
+wandb: 🚀 View run adni_ct_gat_SMOTE_min_fold_3 at: https://wandb.ai/ahnha_ahnha/adni_ct_gat/runs/3s831gg6
+wandb: ⭐️ View project at: https://wandb.ai/ahnha_ahnha/adni_ct_gat
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20250715_033510-3s831gg6/logs
+wandb: Tracking run with wandb version 0.21.0
+wandb: Run data is saved locally in /home/user14/bagle/classifier/wandb/run-20250715_035112-jqdtmres
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run adni_ct_gat_SMOTE_min_fold_4
+wandb: ⭐️ View project at https://wandb.ai/ahnha_ahnha/adni_ct_gat
+wandb: 🚀 View run at https://wandb.ai/ahnha_ahnha/adni_ct_gat/runs/jqdtmres
+ test_loss: 1.6135 test_acc: 0.2875
+
+GNN Epoch [1500 / 5000] loss_train: 0.58781 accuracy_train: 0.77217
+ test_loss: 1.8024 test_acc: 0.2173
+
+GNN Epoch [1600 / 5000] loss_train: 0.81596 accuracy_train: 0.66321
+ test_loss: 1.6391 test_acc: 0.2396
+
+GNN Epoch [1700 / 5000] loss_train: 0.63891 accuracy_train: 0.75000
+ test_loss: 1.5749 test_acc: 0.3099
+
+GNN Epoch [1800 / 5000] loss_train: 0.57629 accuracy_train: 0.77264
+ test_loss: 1.6981 test_acc: 0.2236
+
+GNN Epoch [1900 / 5000] loss_train: 0.64271 accuracy_train: 0.73774
+ test_loss: 1.6832 test_acc: 0.3482
+
+GNN Epoch [2000 / 5000] loss_train: 0.69585 accuracy_train: 0.71840
+ test_loss: 1.8092 test_acc: 0.1981
+
+GNN Epoch [2100 / 5000] loss_train: 0.60235 accuracy_train: 0.75991
+ test_loss: 1.6284 test_acc: 0.3291
+
+GNN Epoch [2200 / 5000] loss_train: 0.63142 accuracy_train: 0.74858
+ test_loss: 1.6754 test_acc: 0.2875
+
+GNN Epoch [2300 / 5000] loss_train: 0.57468 accuracy_train: 0.76981
+ test_loss: 1.6212 test_acc: 0.3259
+
+GNN Epoch [2400 / 5000] loss_train: 0.56411 accuracy_train: 0.77358
+ test_loss: 1.7290 test_acc: 0.2620
+
+GNN Epoch [2500 / 5000] loss_train: 0.58405 accuracy_train: 0.76981
+ test_loss: 1.6109 test_acc: 0.3131
+
+GNN Epoch [2600 / 5000] loss_train: 0.55493 accuracy_train: 0.78538
+ test_loss: 1.6218 test_acc: 0.3067
+
+GNN Epoch [2700 / 5000] loss_train: 0.54582 accuracy_train: 0.79151
+ test_loss: 1.6322 test_acc: 0.3163
+
+GNN Epoch [2800 / 5000] loss_train: 0.55097 accuracy_train: 0.78349
+ test_loss: 1.7236 test_acc: 0.2875
+
+GNN Epoch [2900 / 5000] loss_train: 0.69627 accuracy_train: 0.72311
+ test_loss: 1.6506 test_acc: 0.3355
+
+GNN Epoch [3000 / 5000] loss_train: 0.55938 accuracy_train: 0.76179
+ test_loss: 1.6966 test_acc: 0.3387
+
+GNN Epoch [3100 / 5000] loss_train: 0.54105 accuracy_train: 0.79292
+ test_loss: 1.6201 test_acc: 0.2971
+
+GNN Epoch [3200 / 5000] loss_train: 0.65199 accuracy_train: 0.73491
+ test_loss: 1.8425 test_acc: 0.1981
+
+GNN Epoch [3300 / 5000] loss_train: 0.52781 accuracy_train: 0.78915
+ test_loss: 1.6136 test_acc: 0.3131
+
+GNN Epoch [3400 / 5000] loss_train: 0.53514 accuracy_train: 0.78774
+ test_loss: 1.7261 test_acc: 0.2812
+
+GNN Epoch [3500 / 5000] loss_train: 0.54334 accuracy_train: 0.77972
+ test_loss: 1.7421 test_acc: 0.3227
+
+GNN Epoch [3600 / 5000] loss_train: 0.55286 accuracy_train: 0.78868
+ test_loss: 1.8026 test_acc: 0.3291
+
+GNN Epoch [3700 / 5000] loss_train: 0.63883 accuracy_train: 0.75142
+ test_loss: 1.8449 test_acc: 0.3003
+
+GNN Epoch [3800 / 5000] loss_train: 0.54847 accuracy_train: 0.78255
+ test_loss: 1.7161 test_acc: 0.3067
+
+GNN Epoch [3900 / 5000] loss_train: 0.74752 accuracy_train: 0.70236
+ test_loss: 1.9852 test_acc: 0.1629
+
+GNN Epoch [4000 / 5000] loss_train: 0.52285 accuracy_train: 0.79670
+ test_loss: 1.8808 test_acc: 0.2300
+
+GNN Epoch [4100 / 5000] loss_train: 0.62493 accuracy_train: 0.75943
+ test_loss: 1.8161 test_acc: 0.3610
+
+GNN Epoch [4200 / 5000] loss_train: 0.52315 accuracy_train: 0.79198
+ test_loss: 1.7418 test_acc: 0.2939
+
+GNN Epoch [4300 / 5000] loss_train: 0.50844 accuracy_train: 0.80142
+ test_loss: 1.7564 test_acc: 0.2875
+
+GNN Epoch [4400 / 5000] loss_train: 0.53683 accuracy_train: 0.79340
+ test_loss: 2.0369 test_acc: 0.2013
+
+GNN Epoch [4500 / 5000] loss_train: 0.58273 accuracy_train: 0.77264
+ test_loss: 1.7970 test_acc: 0.2812
+
+GNN Epoch [4600 / 5000] loss_train: 0.52701 accuracy_train: 0.79481
+ test_loss: 1.7144 test_acc: 0.3099
+
+GNN Epoch [4700 / 5000] loss_train: 0.51655 accuracy_train: 0.79575
+ test_loss: 1.9237 test_acc: 0.1789
+
+GNN Epoch [4800 / 5000] loss_train: 1.00155 accuracy_train: 0.55943
+ test_loss: 1.5869 test_acc: 0.2524
+
+GNN Epoch [4900 / 5000] loss_train: 1.00085 accuracy_train: 0.56462
+ test_loss: 1.6382 test_acc: 0.2556
+
+GNN Epoch [5000 / 5000] loss_train: 0.96527 accuracy_train: 0.57311
+ test_loss: 1.5621 test_acc: 0.2588
+GNN Training completed! Best accuracy: 0.3802
+GNN load_and_test called with model_path: ./logs/20250715_030515/2.pth
+Loading GNN model from: ./logs/20250715_030515/2.pth
+GPU memory cleared after fold 3
+
+
+=============================== Fold 4 ===============================
+Loaded synthetic data from SMOTE_min_fold3.pt: 727 samples
+SMOTE synthetic data - using class-based adjacency matrices
+Using SMOTE_min augmentation: 727 additional samples
+Adding 727 augmented samples to training set
+Generating adjacency matrices for 727 synthetic samples using average method
+Creating class-wise average adjacency matrices with 90.0% sparsification
+Class 0: processed 371 matrices, original avg degree: 1.00, target edges: 80
+Class 1: processed 153 matrices, original avg degree: 1.00, target edges: 80
+Class 2: processed 407 matrices, original avg degree: 1.00, target edges: 80
+Class 3: processed 241 matrices, original avg degree: 1.00, target edges: 80
+Class 4: processed 136 matrices, original avg degree: 1.00, target edges: 80
+Assigning class average adjacency matrices for 727 synthetic samples (Option-M)
+Average adjacency assignment:
+  Class 0: 36 synthetic samples
+  Class 1: 254 synthetic samples
+  Class 3: 166 synthetic samples
+  Class 4: 271 synthetic samples
+Final training set size: 2035 samples
+
+GNN Epoch [100 / 5000] loss_train: 1.13847 accuracy_train: 0.52629
+ test_loss: 1.5305 test_acc: 0.2589
+
+GNN Epoch [200 / 5000] loss_train: 0.89906 accuracy_train: 0.60835
+ test_loss: 1.5482 test_acc: 0.3006
+
+GNN Epoch [300 / 5000] loss_train: 0.84756 accuracy_train: 0.64865
+ test_loss: 1.5133 test_acc: 0.3274
+
+GNN Epoch [400 / 5000] loss_train: 0.82186 accuracy_train: 0.65160
+ test_loss: 1.5697 test_acc: 0.2857
+
+GNN Epoch [500 / 5000] loss_train: 0.83858 accuracy_train: 0.64472
+ test_loss: 1.5297 test_acc: 0.2887
+
+GNN Epoch [600 / 5000] loss_train: 0.78366 accuracy_train: 0.67273
+ test_loss: 1.6288 test_acc: 0.3214
+
+GNN Epoch [700 / 5000] loss_train: 0.78611 accuracy_train: 0.68698
+ test_loss: 1.6648 test_acc: 0.2798
+
+GNN Epoch [800 / 5000] loss_train: 0.80012 accuracy_train: 0.66781
+ test_loss: 1.7570 test_acc: 0.2857
+
+GNN Epoch [900 / 5000] loss_train: 0.76423 accuracy_train: 0.68206
+ test_loss: 2.0695 test_acc: 0.2679
+
+GNN Epoch [1000 / 5000] loss_train: 0.76406 accuracy_train: 0.69091
+ test_loss: 1.7635 test_acc: 0.3036
+
+GNN Epoch [1100 / 5000] loss_train: 0.73607 accuracy_train: 0.69975
+ test_loss: 1.6583 test_acc: 0.2857
+
+GNN Epoch [1200 / 5000] loss_train: 0.72511 accuracy_train: 0.70762
+ test_loss: 1.7475 test_acc: 0.2411
+
+GNN Epoch [1300 / 5000] loss_train: 0.72817 accuracy_train: 0.69779
+ test_loss: 1.6704 test_acc: 0.3095
+
+GNN Epoch [1400 / 5000] loss_train: 0.73777 accuracy_train: 0.69287
+ test_loss: 1.6859 test_acc: 0.2738
+
+GNN Epoch [1500 / 5000] loss_train: 0.76446 accuracy_train: 0.67961
+ test_loss: 1.5592 test_acc: 0.2976
+
+GNN Epoch [1600 / 5000] loss_train: 0.78817 accuracy_train: 0.66634
+ test_loss: 1.6107 test_acc: 0.2798
+
+GNN Epoch [1700 / 5000] loss_train: 0.76498 accuracy_train: 0.68747
+ test_loss: 1.6791 test_acc: 0.2887
+
+GNN Epoch [1800 / 5000] loss_train: 0.75579 accuracy_train: 0.68649
+ test_loss: 1.5292 test_acc: 0.3244
+
+GNN Epoch [1900 / 5000] loss_train: 0.90698 accuracy_train: 0.60147
+ test_loss: 1.4977 test_acc: 0.2917
+
+GNN Epoch [2000 / 5000] loss_train: 0.76311 accuracy_train: 0.68550
+ test_loss: 1.6162 test_acc: 0.3065
+
+GNN Epoch [2100 / 5000] loss_train: 0.77921 accuracy_train: 0.67961
+ test_loss: 1.6060 test_acc: 0.2917
+
+GNN Epoch [2200 / 5000] loss_train: 0.84405 accuracy_train: 0.64177
+ test_loss: 1.5810 test_acc: 0.2530
+
+GNN Epoch [2300 / 5000] loss_train: 0.78245 accuracy_train: 0.68059
+ test_loss: 1.5821 test_acc: 0.3185
+
+GNN Epoch [2400 / 5000] loss_train: 1.07234 accuracy_train: 0.54054
+ test_loss: 1.5691 test_acc: 0.2917
+
+GNN Epoch [2500 / 5000] loss_train: 0.97139 accuracy_train: 0.56904
+ test_loss: 1.5121 test_acc: 0.3244
+
+GNN Epoch [2600 / 5000] loss_train: 0.89516 accuracy_train: 0.62654
+ test_loss: 1.5101 test_acc: 0.3214
+
+GNN Epoch [2700 / 5000] loss_train: 0.90774 accuracy_train: 0.61032
+ test_loss: 1.4908 test_acc: 0.3185
+
+GNN Epoch [2800 / 5000] loss_train: 0.83966 accuracy_train: 0.63882
+ test_loss: 1.5358 test_acc: 0.3214
+
+GNN Epoch [2900 / 5000] loss_train: 0.82996 accuracy_train: 0.64177
+ test_loss: 1.5944 test_acc: 0.3214
+wandb: uploading output.log; uploading wandb-summary.json; uploading config.yaml
+wandb:                                                                                
+wandb: 
+wandb: Run history:
+wandb:            epoch ▁▁▁▂▂▂▂▂▂▂▃▃▃▃▃▄▄▄▄▄▄▅▅▅▆▆▆▆▆▇▇▇▇▇██████
+wandb:         test_acc ▅▅▄▆█▄▂▇▅█▅▄▄▇▃▁█▆▄▅▆▆▇▆▆▅▃▇▅▆█▇▆▄▆▆▆▇▅▅
+wandb:       test_auroc ▁
+wandb:          test_f1 ▁
+wandb:        test_loss ▂▅▂▂▃▅▅▅▃▁▄█▅▆▂▁▂▃▃▁▁▄▃▃▁▂▁▃▃▂▁▂▂▂▂▃▂▂▂▄
+wandb: test_macro_auroc ▁
+wandb:    test_macro_f1 ▁
+wandb:        test_prec ▁
+wandb:         test_rec ▁
+wandb:        train_acc ▁▂▂▅▆▆▆█▂▃▇█▇▇▇▄▅▅▄▅▄▇▆▆▆▅▄▄▅▆▇▂▆▃▆▇▆▆▂▅
+wandb:       train_loss █▅▅▄▃▃▄▂▃▂▄▂▁█▁▂▁▃▂▂▃▂▂▂▂▃▄▇▄▃▄▄▃▃▃▂▄▃▅▃
+wandb: 
+wandb: Run summary:
+wandb:            epoch 5000
+wandb:         test_acc 0.375
+wandb:       test_auroc 0.6132
+wandb:          test_f1 0.2828
+wandb:        test_loss 1.52385
+wandb: test_macro_auroc 0.6132
+wandb:    test_macro_f1 0.2828
+wandb:        test_prec 0.3296
+wandb:         test_rec 0.4784
+wandb:        train_acc 0.64423
+wandb:       train_loss 0.86065
+wandb: 
+wandb: 🚀 View run adni_ct_gat_SMOTE_min_fold_4 at: https://wandb.ai/ahnha_ahnha/adni_ct_gat/runs/jqdtmres
+wandb: ⭐️ View project at: https://wandb.ai/ahnha_ahnha/adni_ct_gat
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20250715_035112-jqdtmres/logs
+wandb: Tracking run with wandb version 0.21.0
+wandb: Run data is saved locally in /home/user14/bagle/classifier/wandb/run-20250715_040634-5uybimug
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run adni_ct_gat_SMOTE_min_fold_5
+wandb: ⭐️ View project at https://wandb.ai/ahnha_ahnha/adni_ct_gat
+wandb: 🚀 View run at https://wandb.ai/ahnha_ahnha/adni_ct_gat/runs/5uybimug
+
+GNN Epoch [3000 / 5000] loss_train: 0.83300 accuracy_train: 0.64226
+ test_loss: 1.4997 test_acc: 0.3452
+
+GNN Epoch [3100 / 5000] loss_train: 0.80174 accuracy_train: 0.66290
+ test_loss: 1.5656 test_acc: 0.3333
+
+GNN Epoch [3200 / 5000] loss_train: 1.10046 accuracy_train: 0.52039
+ test_loss: 1.5603 test_acc: 0.2798
+
+GNN Epoch [3300 / 5000] loss_train: 0.88150 accuracy_train: 0.61425
+ test_loss: 1.4870 test_acc: 0.2827
+
+GNN Epoch [3400 / 5000] loss_train: 0.90647 accuracy_train: 0.61916
+ test_loss: 1.4812 test_acc: 0.3006
+
+GNN Epoch [3500 / 5000] loss_train: 0.86354 accuracy_train: 0.63145
+ test_loss: 1.5246 test_acc: 0.3304
+
+GNN Epoch [3600 / 5000] loss_train: 0.82772 accuracy_train: 0.65307
+ test_loss: 1.5026 test_acc: 0.3363
+
+GNN Epoch [3700 / 5000] loss_train: 0.82223 accuracy_train: 0.66486
+ test_loss: 1.5477 test_acc: 0.2768
+
+GNN Epoch [3800 / 5000] loss_train: 0.82643 accuracy_train: 0.65111
+ test_loss: 1.5166 test_acc: 0.3125
+
+GNN Epoch [3900 / 5000] loss_train: 0.83288 accuracy_train: 0.63686
+ test_loss: 1.5758 test_acc: 0.2946
+
+GNN Epoch [4000 / 5000] loss_train: 0.81178 accuracy_train: 0.66536
+ test_loss: 1.5579 test_acc: 0.2708
+
+GNN Epoch [4100 / 5000] loss_train: 0.89832 accuracy_train: 0.62850
+ test_loss: 1.5363 test_acc: 0.2857
+
+GNN Epoch [4200 / 5000] loss_train: 0.82301 accuracy_train: 0.66388
+ test_loss: 1.5366 test_acc: 0.2917
+
+GNN Epoch [4300 / 5000] loss_train: 0.85590 accuracy_train: 0.63538
+ test_loss: 1.4928 test_acc: 0.3333
+
+GNN Epoch [4400 / 5000] loss_train: 0.80646 accuracy_train: 0.65946
+ test_loss: 1.4987 test_acc: 0.2946
+
+GNN Epoch [4500 / 5000] loss_train: 0.77967 accuracy_train: 0.66880
+ test_loss: 1.5582 test_acc: 0.3036
+
+GNN Epoch [4600 / 5000] loss_train: 0.79714 accuracy_train: 0.67715
+ test_loss: 1.5324 test_acc: 0.3214
+
+GNN Epoch [4700 / 5000] loss_train: 0.91733 accuracy_train: 0.60344
+ test_loss: 1.5210 test_acc: 0.3065
+
+GNN Epoch [4800 / 5000] loss_train: 0.86170 accuracy_train: 0.63636
+ test_loss: 1.5014 test_acc: 0.3006
+
+GNN Epoch [4900 / 5000] loss_train: 0.83463 accuracy_train: 0.64275
+ test_loss: 1.5007 test_acc: 0.3155
+
+GNN Epoch [5000 / 5000] loss_train: 0.86065 accuracy_train: 0.64423
+ test_loss: 1.5239 test_acc: 0.3423
+GNN Training completed! Best accuracy: 0.3750
+GNN load_and_test called with model_path: ./logs/20250715_030515/3.pth
+Loading GNN model from: ./logs/20250715_030515/3.pth
+GPU memory cleared after fold 4
+
+
+=============================== Fold 5 ===============================
+Loaded synthetic data from SMOTE_min_fold4.pt: 693 samples
+SMOTE synthetic data - using class-based adjacency matrices
+Using SMOTE_min augmentation: 693 additional samples
+Adding 693 augmented samples to training set
+Generating adjacency matrices for 693 synthetic samples using average method
+Creating class-wise average adjacency matrices with 90.0% sparsification
+Class 0: processed 371 matrices, original avg degree: 1.00, target edges: 80
+Class 1: processed 163 matrices, original avg degree: 1.00, target edges: 80
+Class 2: processed 401 matrices, original avg degree: 1.00, target edges: 80
+Class 3: processed 238 matrices, original avg degree: 1.00, target edges: 80
+Class 4: processed 139 matrices, original avg degree: 1.00, target edges: 80
+Assigning class average adjacency matrices for 693 synthetic samples (Option-M)
+Average adjacency assignment:
+  Class 0: 30 synthetic samples
+  Class 1: 238 synthetic samples
+  Class 3: 163 synthetic samples
+  Class 4: 262 synthetic samples
+Final training set size: 2005 samples
+
+GNN Epoch [100 / 5000] loss_train: 1.02350 accuracy_train: 0.55910
+ test_loss: 1.4833 test_acc: 0.3283
+
+GNN Epoch [200 / 5000] loss_train: 0.93100 accuracy_train: 0.60100
+ test_loss: 1.5397 test_acc: 0.3464
+
+GNN Epoch [300 / 5000] loss_train: 0.85042 accuracy_train: 0.64090
+ test_loss: 1.5275 test_acc: 0.2982
+
+GNN Epoch [400 / 5000] loss_train: 0.85433 accuracy_train: 0.64090
+ test_loss: 1.6186 test_acc: 0.3313
+
+GNN Epoch [500 / 5000] loss_train: 0.93816 accuracy_train: 0.61347
+ test_loss: 1.5126 test_acc: 0.2892
+
+GNN Epoch [600 / 5000] loss_train: 0.80129 accuracy_train: 0.66384
+ test_loss: 1.6965 test_acc: 0.3133
+
+GNN Epoch [700 / 5000] loss_train: 0.80028 accuracy_train: 0.66833
+ test_loss: 1.6315 test_acc: 0.2771
+
+GNN Epoch [800 / 5000] loss_train: 0.79898 accuracy_train: 0.66683
+ test_loss: 1.7551 test_acc: 0.2741
+
+GNN Epoch [900 / 5000] loss_train: 0.81974 accuracy_train: 0.66584
+ test_loss: 1.6775 test_acc: 0.3042
+
+GNN Epoch [1000 / 5000] loss_train: 0.81166 accuracy_train: 0.65935
+ test_loss: 1.8449 test_acc: 0.3133
+
+GNN Epoch [1100 / 5000] loss_train: 0.77547 accuracy_train: 0.67681
+ test_loss: 1.5674 test_acc: 0.2530
+
+GNN Epoch [1200 / 5000] loss_train: 0.76216 accuracy_train: 0.67282
+ test_loss: 1.6570 test_acc: 0.3223
+
+GNN Epoch [1300 / 5000] loss_train: 0.84582 accuracy_train: 0.63591
+ test_loss: 1.6717 test_acc: 0.3253
+
+GNN Epoch [1400 / 5000] loss_train: 1.42449 accuracy_train: 0.53067
+ test_loss: 1.6474 test_acc: 0.2922
+
+GNN Epoch [1500 / 5000] loss_train: 0.91225 accuracy_train: 0.60449
+ test_loss: 1.6115 test_acc: 0.2922
+
+GNN Epoch [1600 / 5000] loss_train: 0.83201 accuracy_train: 0.65486
+ test_loss: 1.5589 test_acc: 0.3223
+
+GNN Epoch [1700 / 5000] loss_train: 0.84005 accuracy_train: 0.64888
+ test_loss: 1.6612 test_acc: 0.2982
+
+GNN Epoch [1800 / 5000] loss_train: 0.83679 accuracy_train: 0.65287
+ test_loss: 1.5326 test_acc: 0.2952
+
+GNN Epoch [1900 / 5000] loss_train: 0.87848 accuracy_train: 0.62843
+ test_loss: 1.5218 test_acc: 0.3133
+
+GNN Epoch [2000 / 5000] loss_train: 0.83222 accuracy_train: 0.64489
+ test_loss: 1.7539 test_acc: 0.3253
+
+GNN Epoch [2100 / 5000] loss_train: 0.92305 accuracy_train: 0.61546
+ test_loss: 1.8961 test_acc: 0.3434
+
+GNN Epoch [2200 / 5000] loss_train: 0.86478 accuracy_train: 0.63192
+ test_loss: 1.6237 test_acc: 0.3133
+
+GNN Epoch [2300 / 5000] loss_train: 0.80288 accuracy_train: 0.66035
+ test_loss: 1.6151 test_acc: 0.2922
+
+GNN Epoch [2400 / 5000] loss_train: 0.78784 accuracy_train: 0.68229
+ test_loss: 1.6689 test_acc: 0.2952
+
+GNN Epoch [2500 / 5000] loss_train: 0.91345 accuracy_train: 0.60050
+ test_loss: 1.5410 test_acc: 0.3042
+
+GNN Epoch [2600 / 5000] loss_train: 0.80620 accuracy_train: 0.66733
+ test_loss: 1.5889 test_acc: 0.2801
+
+GNN Epoch [2700 / 5000] loss_train: 0.85112 accuracy_train: 0.63840
+ test_loss: 1.6327 test_acc: 0.2982
+
+GNN Epoch [2800 / 5000] loss_train: 0.87471 accuracy_train: 0.61696
+ test_loss: 1.4737 test_acc: 0.3464
+
+GNN Epoch [2900 / 5000] loss_train: 0.83650 accuracy_train: 0.63840
+ test_loss: 1.6003 test_acc: 0.3163
+
+GNN Epoch [3000 / 5000] loss_train: 0.85431 accuracy_train: 0.63591
+ test_loss: 1.5770 test_acc: 0.3283
+
+GNN Epoch [3100 / 5000] loss_train: 0.82194 accuracy_train: 0.66284
+ test_loss: 1.6365 test_acc: 0.3223
+
+GNN Epoch [3200 / 5000] loss_train: 0.94102 accuracy_train: 0.59501
+ test_loss: 1.5970 test_acc: 0.3163
+
+GNN Epoch [3300 / 5000] loss_train: 0.93619 accuracy_train: 0.59701
+ test_loss: 1.5082 test_acc: 0.3223
+
+GNN Epoch [3400 / 5000] loss_train: 0.90414 accuracy_train: 0.62095
+ test_loss: 1.5421 test_acc: 0.2560
+
+GNN Epoch [3500 / 5000] loss_train: 0.83423 accuracy_train: 0.64738
+ test_loss: 1.6116 test_acc: 0.3283
+
+GNN Epoch [3600 / 5000] loss_train: 0.79880 accuracy_train: 0.67631
+ test_loss: 1.5789 test_acc: 0.3343
+
+GNN Epoch [3700 / 5000] loss_train: 0.80358 accuracy_train: 0.65486
+ test_loss: 1.6293 test_acc: 0.3313
+
+GNN Epoch [3800 / 5000] loss_train: 0.80921 accuracy_train: 0.65387
+ test_loss: 1.5922 test_acc: 0.3253
+
+GNN Epoch [3900 / 5000] loss_train: 0.82976 accuracy_train: 0.66085
+ test_loss: 1.6048 test_acc: 0.3012
+
+GNN Epoch [4000 / 5000] loss_train: 0.86738 accuracy_train: 0.63940
+ test_loss: 1.5628 test_acc: 0.3163
+
+GNN Epoch [4100 / 5000] loss_train: 0.91970 accuracy_train: 0.61446
+ test_loss: 1.5705 test_acc: 0.3133
+
+GNN Epoch [4200 / 5000] loss_train: 0.85428 accuracy_train: 0.62843
+ test_loss: 1.5635 test_acc: 0.3012
+
+GNN Epoch [4300 / 5000] loss_train: 0.80997 accuracy_train: 0.64988
+ test_loss: 1.7098 test_acc: 0.2500
+
+GNN Epoch [4400 / 5000] loss_train: 1.01856 accuracy_train: 0.56209
+ test_loss: 1.5181 test_acc: 0.3133
+
+GNN Epoch [4500 / 5000] loss_train: 0.90717 accuracy_train: 0.61397
+wandb: uploading output.log; uploading wandb-summary.json; uploading config.yaml
+wandb:                                                                                
+wandb: 
+wandb: Run history:
+wandb:            epoch ▁▁▁▁▂▂▃▃▃▄▄▄▄▄▄▄▅▅▅▅▅▆▆▆▆▆▆▆▆▆▆▆▆▇▇▇▇███
+wandb:         test_acc ▇█▇▇▇▇▇▇▇▄▇▆▇▇▆▇▇▇▇▆▇▆▆▇▇▇▆▇▇▇▇▇▇▇▅▆█▆▁▇
+wandb:       test_auroc ▁
+wandb:          test_f1 ▁
+wandb:        test_loss ▁▁▁▂▂▂▃▃▄▃▂▂▃▂▅▂▃▂▃█▂▄▃▃▁▂▃▃▃▄▂▂▂▁▂▂▂▂▄▁
+wandb: test_macro_auroc ▁
+wandb:    test_macro_f1 ▁
+wandb:        test_prec ▁
+wandb:         test_rec ▁
+wandb:        train_acc ▁▆▇▇▇▇███▇██▇▇▇▇▆▇█▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇█▆▆▇▇▆
+wandb:       train_loss █▄▂▁▂▂▂▁▁▁▁▁▃▂▂▁▁▂▁▁▂▂▂▂▂▂▂▁▁▁▂▂▁▁▁▃▂▂▁▂
+wandb: 
+wandb: Run summary:
+wandb:            epoch 5000
+wandb:         test_acc 0.3916
+wandb:       test_auroc 0.5711
+wandb:          test_f1 0.4481
+wandb:        test_loss 1.5661
+wandb: test_macro_auroc 0.5711
+wandb:    test_macro_f1 0.2688
+wandb:        test_prec 0.3002
+wandb:         test_rec 0.3559
+wandb:        train_acc 0.6015
+wandb:       train_loss 0.88365
+wandb: 
+wandb: 🚀 View run adni_ct_gat_SMOTE_min_fold_5 at: https://wandb.ai/ahnha_ahnha/adni_ct_gat/runs/5uybimug
+wandb: ⭐️ View project at: https://wandb.ai/ahnha_ahnha/adni_ct_gat
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20250715_040634-5uybimug/logs
+ test_loss: 1.5267 test_acc: 0.3042
+
+GNN Epoch [4600 / 5000] loss_train: 0.85663 accuracy_train: 0.63192
+ test_loss: 1.6471 test_acc: 0.2590
+
+GNN Epoch [4700 / 5000] loss_train: 0.85490 accuracy_train: 0.62344
+ test_loss: 1.5466 test_acc: 0.3223
+
+GNN Epoch [4800 / 5000] loss_train: 0.83092 accuracy_train: 0.64738
+ test_loss: 1.6650 test_acc: 0.2892
+
+GNN Epoch [4900 / 5000] loss_train: 0.84967 accuracy_train: 0.64389
+ test_loss: 1.8537 test_acc: 0.1777
+
+GNN Epoch [5000 / 5000] loss_train: 0.88365 accuracy_train: 0.60150
+ test_loss: 1.5661 test_acc: 0.3133
+GNN Training completed! Best accuracy: 0.3916
+GNN load_and_test called with model_path: ./logs/20250715_030515/4.pth
+Loading GNN model from: ./logs/20250715_030515/4.pth
+GPU memory cleared after fold 5
+--------------- Result ---------------
+Label distribution:   Counter({2: 505, 0: 467, 3: 309, 1: 194, 4: 169})
+5-Fold test loss:     [1.6365690231323242, 1.4777253866195679, 1.662171721458435, 1.4939595460891724, 1.4877225160598755]
+5-Fold test accuracy: [0.3940298507462687, 0.4024390243902439, 0.3801916932907348, 0.375, 0.391566265060241]
+---------- Confusion Matrix ----------
+5-Fold precision:     [0.2692493925739044, 0.2868222525734461, 0.2645707964476584, 0.3296063491915613, 0.300224358974359]
+5-Fold specificity:   [0.8350593764589979, 0.8466408224614584, 0.8339558799280228, 0.8430903178509979, 0.8348778627675937]
+5-Fold sensitivity:   [0.33967736099761076, 0.3579905098310006, 0.31871328498648366, 0.4784313725490196, 0.355916018604186]
+5-Fold f1 score:      [0.29655153031112114, 0.2774143503555268, 0.2854957272657504, 0.2828087936586234, 0.4480604958884906]
+5-Fold AUROC:         [0.5945494068604401, 0.6688621389438149, 0.5817736555929895, 0.6132039304589416, 0.5711363894820807]
+5-Fold Macro F1:      [0.2372412242488969, 0.22193148028442145, 0.2283965818126003, 0.2828087936586234, 0.26883629753309435]
+5-Fold Macro AUROC:   [0.5945494068604401, 0.6688621389438149, 0.5817736555929895, 0.6132039304589416, 0.5711363894820807]
+-------------- Mean, Std --------------
+Acc:   0.3886 ± 0.0099
+Prec:  0.2901 ± 0.0235
+Rec:   0.3701 ± 0.0559
+F1:    0.3181 ± 0.0653
+AUROC: 0.6059 ± 0.0345
+Macro F1: 0.2478 ± 0.0238
+Macro AUROC: 0.6059 ± 0.0345
+Results saved to /home/user14/bagle/summary/experiment_summary.xlsx
+Excel summary saved to: /home/user14/bagle/summary/experiment_summary.xlsx
+GPU memory cleared after experiment completion
+
+Time: 1:16:27
+Final GPU memory cleanup completed
+
+종료 시간: Tue Jul 15 04:21:43 UTC 2025
+종료 코드: 0
+✓ 실험 완료: gat_SMOTE_min_average
